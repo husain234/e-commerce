@@ -95,6 +95,11 @@
             </div>
           </div>
         </div>
+
+
+
+
+        <!-- DARI INI -->
   
   <div class="content-wrapper">
         <div class="container">
@@ -296,18 +301,6 @@
   })();
 
 </script>
-
-
-
-
-<div>
-  <footer class="text-center">
-    <p><a href="http://malangkab.go.id">Kabupaten Malang</a></p>
-  
-    <p>Copyright 2015 bag-pde.malangkab.go.id</a></p>
-  </footer>
-</div>
-
 
 
 
