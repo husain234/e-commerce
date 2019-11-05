@@ -102,27 +102,27 @@
 
 
     <div id="main">
-<div class="content-wrapper">
-<div class="container">
-<div class="row">
-<p><span style="font-family: Arial;">&nbsp; &nbsp; &nbsp;Sistem Informasi Harga dan Ketersediaan Bahan Pokok (si-HarKePo) adalah aplikasi berbasis web yang dibuat  dalam rangka mendukung Tim Pengendali Inflasi Daerah (TPID) Kabupaten Malang. Aplikasi ini berisi tentang  informasi Komoditi pangan Kabupaten Malang yaitu harga bahan pokok baik itu harga saat ini, harga  sebelumnya, dan selisih harga. Selain itu di aplikasi ini juga terdapat informasi ketersediaan kebutuhan  bahan pokok. Masyarakat dapat mengakses aplikasi ini melalui website www.malangkab.go.id dan tertaut dengan  http://komoditi.malangkab.go.id . Untuk Satuan Kerja Perangkat Daerah Kabupaten Malang yang mendukung aplikasi  ini adalah:</span></p>
-<br><span style="font-family: Arial;">1. Dinas Komunikasi dan informatika</span></br>
-<span style="font-family: Arial;">2. Dinas Ketahanan Pangan</span><br>
-<p><span style="font-family: Arial;">3. Dinas Perindustrian dan Perdagangan </span></p>
-<p><span style="font-family: Arial;">4. Dinas Perikanan</span></p>
-<p><span style="font-family: Arial;">5. Dinas Peternakan dan Kesehatan Hewan</span></p>
-<p><span style="font-family: Arial;">6. Bagian Perekonomian </span></p>
-<p>&nbsp;</p>
-<p><span style="font-family: Arial;"><span style="font-size: medium;">Informasi lebih lanjut :</span></span></p>
-<p><a href="http://http://kominfo.malangkab.go.id"><span style="font-family: Arial;"><strong>DINAS KOMUNIKASI DAN INFORMATIKA</strong></span></a></p>
-<p><span style="font-family: Arial;">Jl. A. Yani Utara No. 384 B. Telepon: 0341-408788 Fax: (0341) 408788 eMail : kominfo@malangkab.go.id</span></p>
-<p><span style="font-family: Arial;">&nbsp;</span></p>
-<p><a href="http://disperindag.malangkab.go.id"><span style="font-family: Arial;"><strong>Dinas Perindustrian, Perdagangan, dan Pasar</strong></span></a></p>
-<p><span style="font-family: Arial;">Jl. Trunojoyo Kav. 6, Kepanjen Telp. (0341) 391673, 391676, 391674 eMail: disperindag@malangkab.go.id</span></p>
-<p>&nbsp;</p>
-</div>
-</div>
-</div>        <!-- angular templating -->
+      <div class="content-wrapper">
+        <div class="container">
+          <div class="row">
+            <p><span style="font-family: Arial;">&nbsp; &nbsp; &nbsp;Sistem Informasi Harga dan Ketersediaan Bahan Pokok (si-HarKePo) adalah aplikasi berbasis web yang dibuat  dalam rangka mendukung Tim Pengendali Inflasi Daerah (TPID) Kabupaten Malang. Aplikasi ini berisi tentang  informasi Komoditi pangan Kabupaten Malang yaitu harga bahan pokok baik itu harga saat ini, harga  sebelumnya, dan selisih harga. Selain itu di aplikasi ini juga terdapat informasi ketersediaan kebutuhan  bahan pokok. Masyarakat dapat mengakses aplikasi ini melalui website www.malangkab.go.id dan tertaut dengan  http://komoditi.malangkab.go.id . Untuk Satuan Kerja Perangkat Daerah Kabupaten Malang yang mendukung aplikasi  ini adalah:</span></p>
+                <span style="font-family: Arial;">1. Dinas Komunikasi dan informatika<br>
+                <span style="font-family: Arial;">2. Dinas Ketahanan Pangan<br>
+                <span style="font-family: Arial;">3. Dinas Perindustrian dan Perdagangan </span><br>
+                <span style="font-family: Arial;">4. Dinas Perikanan</span><br>
+                <span style="font-family: Arial;">5. Dinas Peternakan dan Kesehatan Hewan</span><br>
+                <span style="font-family: Arial;">6. Bagian Perekonomian </span><br>
+                <p>&nbsp;</p>
+                <p><span style="font-family: Arial;"><span style="font-size: medium;">Informasi lebih lanjut :</span></span></p>
+                <p><a href="http://http://kominfo.malangkab.go.id"><span style="font-family: Arial;"><strong>DINAS KOMUNIKASI DAN INFORMATIKA</strong></span></a></p>
+                <p><span style="font-family: Arial;">Jl. A. Yani Utara No. 384 B. Telepon: 0341-408788 Fax: (0341) 408788 eMail : kominfo@malangkab.go.id</span></p>
+                <p><span style="font-family: Arial;">&nbsp;</span></p>
+                <p><a href="http://disperindag.malangkab.go.id"><span style="font-family: Arial;"><strong>Dinas Perindustrian, Perdagangan, dan Pasar</strong></span></a></p>
+                <p><span style="font-family: Arial;">Jl. Trunojoyo Kav. 6, Kepanjen Telp. (0341) 391673, 391676, 391674 eMail: disperindag@malangkab.go.id</span></p>
+                <p>&nbsp;</p>
+                </div>
+                </div>
+                </div>        <!-- angular templating -->
         <!-- this is where content will be injected --> 
   </div>
 
