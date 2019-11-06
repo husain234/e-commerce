@@ -110,44 +110,43 @@
       
     <table width="60%"  border="0" cellspacing="0" cellpadding="0">
   
-  <tr>
-    
-    <form action="index.php?hal=kecamatan&cari=ok" method="post">
-    <th scope="row"><select id="IdKecamatan" name="IdKecamatan"  class="form-control">
-                       <option value="Kepanjen">--Pilih Kecamatan--</option>
-                       <option value="Bantur">Bantur</option>
-                       <option value="Bululawang">Bululawang</option>
-                       <option value="Dampit">Dampit</option>
-                       <option value="Donomulyo">Donomulyo</option>
-                       <option value="Gondanglegi">Gondanglegi</option>
-                       <option value="Jabung">Jabung</option>
-                       <option value="Karangploso">Karangploso</option>
-                       <option  value="Kepanjen">Kepanjen</option>
-                       <option value="Lawang">Lawang</option>
-                       <option value="Pakis">Pakis</option>
-                       <option value="Pakisaji">Pakisaji</option>
-                       <option  value="Poncokusumo">Poncokusumo</option>
-                       <option value="Pujon">Pujon</option>
-                       <option value="Singosari">Singosari</option>
-                       <option value="Sumberpucung">Sumberpucung</option>
-                       <option  value="Tajinan">Tajinan</option>
-                       <option value="Tumpang">Tumpang</option>
-                       <option value="Turen">Turen</option>
-                       <option  value="Wajak">Wajak</option>
-                    
-    </select></th>
-    <td><select id="jenis_komoditi" name="jenis_komoditi"  class="form-control">
-              
-      
-      
-      <option value="1">Sembako</option>
-      <option  value="2">Komoditi Lain</option>
-    </select></td>
-    <th scope="row"><input type="text" name="NamaKomoditi" id="NamaKomoditi" placeholder="ketik nama komoditi ..." class="form-control" /></th>
-    <th scope="row"><input type="submit" name="Submit" value="Filter"></th>
-    </form>
-  </tr>
-</table>
+      <tr>
+        
+        <form action="index.php?hal=kecamatan&cari=ok" method="post">
+        <th scope="row">
+          <select id="IdKecamatan" name="IdKecamatan" class="form-control">
+                           <option value="Kepanjen">--Pilih Kecamatan--</option>
+                           <option value="Bantur">Bantur</option>
+                           <option value="Bululawang">Bululawang</option>
+                           <option value="Dampit">Dampit</option>
+                           <option value="Donomulyo">Donomulyo</option>
+                           <option value="Gondanglegi">Gondanglegi</option>
+                           <option value="Jabung">Jabung</option>
+                           <option value="Karangploso">Karangploso</option>
+                           <option  value="Kepanjen">Kepanjen</option>
+                           <option value="Lawang">Lawang</option>
+                           <option value="Pakis">Pakis</option>
+                           <option value="Pakisaji">Pakisaji</option>
+                           <option  value="Poncokusumo">Poncokusumo</option>
+                           <option value="Pujon">Pujon</option>
+                           <option value="Singosari">Singosari</option>
+                           <option value="Sumberpucung">Sumberpucung</option>
+                           <option  value="Tajinan">Tajinan</option>
+                           <option value="Tumpang">Tumpang</option>
+                           <option value="Turen">Turen</option>
+                           <option  value="Wajak">Wajak</option>
+                        
+        </select></th>
+        <td><select id="jenis_komoditi" name="jenis_komoditi"  class="form-control">
+          
+          <option value="1">Sembako</option>
+          <option  value="2">Komoditi Lain</option>
+        </select></td>
+        <th scope="row"><input type="text" name="NamaKomoditi" id="NamaKomoditi" placeholder="ketik nama komoditi ..." class="form-control" /></th>
+        <th scope="row"><input class="btn btn-danger" type="submit" name="Submit" value="Filter"></th>
+        </form>
+      </tr>
+    </table>
 
     </br>
   

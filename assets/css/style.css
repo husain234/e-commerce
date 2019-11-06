@@ -1637,7 +1637,8 @@ pre {
 
 select.form-control:focus::-ms-value {
   color: #495057;
-  background-color: #fff; }
+  background-color: #fff; 
+}
 
 .form-control-file,
 .form-control-range {
@@ -8935,7 +8936,10 @@ h1, h2, h3, h4, h5,
   .table tbody tr td {
     text-align: center !important;
     vertical-align: middle;
-    padding: 40px 10px;
+
+    /*Ini yang di rubah*/
+
+    /*padding: 40px 10px;*/
     border: 1px solid transparent !important;
     border-bottom: 1px solid rgba(0, 0, 0, 0.05) !important; }
     .table tbody tr td.product-remove a {
