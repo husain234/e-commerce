@@ -44,7 +44,7 @@
 
 	            <div class="col-md-12 ftco-animate text-center">
 	              <h1 class="mb-2">Selamat datang di Pasar Onlin Kabupaten Malang</h1>
-	              <h2 class="subheading mb-4">We deliver organic vegetables &amp; fruits</h2>
+	              <!-- <h2 class="subheading mb-4">We deliver organic vegetables &amp; fruits</h2> -->
 	            </div>
 
 	          </div>
@@ -58,7 +58,7 @@
 
 	            <div class="col-sm-12 ftco-animate text-center">
 	              <h1 class="mb-2">Menyediakan kebutuhan pokok anda</h1>
-	              <h2 class="subheading mb-4">We deliver organic vegetables &amp; fruits</h2>
+	              <!-- <h2 class="subheading mb-4">We deliver organic vegetables &amp; fruits</h2> -->
 	            </div>
 
 	          </div>
@@ -249,9 +249,23 @@
     </section>
 		
 		
-    
-  
 
+		<nav class="navbar navbar-dark bg-dark">
+     <div class="container-fluid">
+      <a class="navbar-brand">
+        <img src="#" width="80" height="30" alt="">
+      </a>
+      <form class="form-inline" action="#" method="post">
+        <div class="form-group">
+          <input type="text" class="form-control" id="staticEmail2" placeholder="Username" name="username">
+        </div>
+        <div class="form-group mx-sm-3">
+          <input type="password" class="form-control" id="inputPassword2" placeholder="Password" name="password">
+        </div>
+        <button type="submit" class="btn btn-primary" name="btnlogin">Login</button>
+      </form>
+     </div>
+  </nav>
   <!-- loader -->
   <div id="ftco-loader" class="show fullscreen"><svg class="circular" width="48px" height="48px"><circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee"/><circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#F96D00"/></svg></div>
 
