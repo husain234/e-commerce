@@ -115,7 +115,7 @@
 					<div class="col-md-4">
 						<div class="category-wrap ftco-animate img mb-4 d-flex align-items-end" style="background-image: url(assets/images/img/stok.jpg);">
 							<div class="text px-3 py-1">
-								<h2 class="mb-0"><a href="#">Ketersediaan</a></h2>
+								<h2 class="mb-0"><a href="<?php echo base_url('Sedia') ?>">Ketersediaan</a></h2>
 							</div>		
 						</div>
 						<div class="category-wrap ftco-animate img d-flex align-items-end" style="background-image: url(assets/images/img/tentangme.jpg);">
