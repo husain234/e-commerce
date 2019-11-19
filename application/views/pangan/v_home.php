@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html>
 <?php $this->load->view('pangan/head') ?>

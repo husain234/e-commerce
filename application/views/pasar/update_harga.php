@@ -33,14 +33,14 @@
             <input type="text" class="form-control" id="inputAddress" placeholder="Nama Barang">
           </div>
           <div class="form-group">
-            <label for="inputAddress">Harga </label>
+            <label for="inputAddress">Harga Lama</label>
+            <input type="text" class="form-control" id="inputAddress" placeholder="Masukkan Harga(Rp)">
+          </div>
+          <div class="form-group">
+            <label for="inputAddress">Harga Baru</label>
             <input type="text" class="form-control" id="inputAddress" placeholder="Masukkan Harga(Rp)">
           </div>
           <!-- <div class="form-group">
-            <label for="inputAddress">Email</label>
-            <input type="text" class="form-control" id="inputAddress" placeholder="Email">
-          </div>
-          <div class="form-group">
             <label for="inputAddress2">No. Telp</label>
             <input type="text" class="form-control" id="inputAddress2" placeholder="Nomer Telp">
           </div> -->
@@ -52,7 +52,7 @@
               </label>
             </div>
           </div> -->
-          <button type="submit" class="btn btn-primary">Create</button>
+          <button type="submit" class="btn btn-primary">Update</button>
         </form>
       </div>
       <!-- /.row -->
