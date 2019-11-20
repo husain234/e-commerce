@@ -6,9 +6,13 @@
 class Home extends CI_Controller
 {
 
-	function index()
-	{
-		$this->load->view('admin/v_home');
+	function index() {
+		$user = $this->session->userdata('level');
+		if (empty($user)) {
+			redirect('../login');
+		} else {
+			$this->load->view('admin/v_home');
+		}
 	}
 }
 ?>
