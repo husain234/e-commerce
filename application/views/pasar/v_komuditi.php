@@ -27,14 +27,14 @@
     <section class="content">
       <!-- Info boxes -->
        <div class="col-sm-6">
-        <form>
+        <form action="<?php echo base_url().'pasar/komuditi/tambahkomuditi' ?>" method="post">
           <div class="form-group">
-            <label for="inputAddress">Barang</label>
-            <input type="text" class="form-control" id="inputAddress" placeholder="Nama Barang">
+            <label for="inputAddress">Id Barang</label>
+            <input type="text" class="form-control" id="inputAddress" name="idbarang" placeholder="Id Barang">
           </div>
           <div class="form-group">
-            <label for="inputAddress">Harga </label>
-            <input type="text" class="form-control" id="inputAddress" placeholder="Masukkan Harga(Rp)">
+            <label for="inputAddress">Barang</label>
+            <input type="text" class="form-control" id="inputAddress" name="namabarang" placeholder="Nama Barang">
           </div>
           <!-- <div class="form-group">
             <label for="inputAddress">Email</label>

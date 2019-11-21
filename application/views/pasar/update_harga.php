@@ -27,18 +27,27 @@
     <section class="content">
       <!-- Info boxes -->
        <div class="col-sm-6">
-        <form>
+        <form action="<?php echo base_url().'pasar/updateharga/updatekomuditi' ?>" method="post">
+          <div class="form-group">
+            <label for="inputAddress">Id Barang</label>
+            <select class="form-control" name="idkomuditi" id="id_komuditi" required>
+              <option value="">No Selected</option>
+              <?php foreach($id_komuditi as $row):?>
+              <option value="<?php echo $row['id_komuditi'];?>"><?php echo $row['id_komuditi'];?></option>
+              <?php endforeach;?>
+            </select>
+          </div>
           <div class="form-group">
             <label for="inputAddress">Barang</label>
-            <input type="text" class="form-control" id="inputAddress" placeholder="Nama Barang">
+            <input type="text" class="form-control" name="namakomuditi" id="nama_komuditi" placeholder="Nama Barang">
           </div>
           <div class="form-group">
             <label for="inputAddress">Harga Lama</label>
-            <input type="text" class="form-control" id="inputAddress" placeholder="Masukkan Harga(Rp)">
+            <input type="text" class="form-control" name="lamakomuditi" id="hama_komuditi" placeholder="Masukkan Harga(Rp)">
           </div>
           <div class="form-group">
             <label for="inputAddress">Harga Baru</label>
-            <input type="text" class="form-control" id="inputAddress" placeholder="Masukkan Harga(Rp)">
+            <input type="text" class="form-control" name="barukomuditi" id="haru_komuditi" placeholder="Masukkan Harga(Rp)">
           </div>
           <!-- <div class="form-group">
             <label for="inputAddress2">No. Telp</label>
@@ -62,5 +71,46 @@
   <!-- /.content-wrapper -->
 
 <?php $this->load->view('pasar/footer') ?>
+
+
+
+    <script type="text/javascript" src="<?php echo base_url().'assets/js/jquery-3.3.1.js'?>"></script>
+    <script type="text/javascript" src="<?php echo base_url().'assets/js/bootstrap.js'?>"></script>
+    <script type="text/javascript">
+        $(document).ready(function(){
+ 
+            $('#id_komuditi').change(function(){ 
+                var id=$(this).val();
+                $.ajax({
+                    url : "<?php echo site_url('pasar/updateharga/datakomuditi');?>",
+                    method : "POST",
+                    data : {id: id},
+                    async : true,
+                    dataType : 'json',
+                    success: function(data){
+
+                         
+                        var nama = '';
+                        var lama = '';
+                        var baru = '';
+                        var i;
+                        for(i=0; i<data.length; i++){
+                            nama += data[i].nama_komuditi;
+                            lama += data[i].harga_lama;
+                            baru += data[i].harga_baru;
+                        }
+
+                        document.getElementById("nama_komuditi").value = nama;
+                        document.getElementById("hama_komuditi").value = lama;
+                        document.getElementById("haru_komuditi").value = baru;
+ 
+                    }
+                });
+                return false;
+            }); 
+             
+        });
+    </script>
+
 </body>
 </html>

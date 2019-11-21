@@ -3,8 +3,12 @@
 /**
 * 
 */
-class komuditi extends CI_Controller
-{
+class komuditi extends CI_Controller {
+
+	function __construct() {
+		parent::__construct();
+		$this->load->model('M_pasar');
+	}
 
 	function index() {
 		$user = $this->session->userdata('level');
@@ -19,6 +23,14 @@ class komuditi extends CI_Controller
 			
 		}
 	
+	}
+
+	public function tambahkomuditi() {
+		$idbarang = $this->input->post('idbarang');
+		$namabarang = $this->input->post('namabarang');
+
+		$this->M_pasar->tambahkomoditi($idbarang,$namabarang);
+		redirect('pasar/komuditi');
 	}
 }
 ?>
