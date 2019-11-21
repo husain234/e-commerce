@@ -11,7 +11,7 @@ class updateharga extends CI_Controller
 		if (empty($user)) {
 			redirect('../login/logout');
 		} else {
-			if ($user == 'pasar') {
+			if ($user == 'Admin Perdagangan') {
 				$this->load->view('pasar/update_harga');
 			} else {
 				redirect('../login/logout');

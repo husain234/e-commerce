@@ -11,7 +11,7 @@ class komuditi extends CI_Controller
 		if (empty($user)) {
 			redirect('../login/logout');
 		} else {
-			if ($user == 'pasar') {
+			if ($user == 'Admin Perdagangan') {
 				$this->load->view('pasar/v_komuditi');
 			} else {
 				redirect('../login/logout');

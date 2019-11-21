@@ -41,7 +41,7 @@ class Login extends CI_Controller {
 			$user['nama'] = $cek['nama_user'];
 			$user['username'] = $cek['username'];
 			$user['password'] = $cek['password'];
-			$user['level'] = $cek['id_level'];
+			$user['level'] = $cek['level'];
 			$user['pasar'] = $cek['id_pasar'];
 
 			$this->session->set_userdata($user);
