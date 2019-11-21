@@ -34,11 +34,23 @@ class updateharga extends CI_Controller {
 
 	public function updatekomuditi() {
 		$id = $this->input->post('idkomuditi');
+		$idh = $this->input->post('idharga');
 		$nama = $this->input->post('namakomuditi');
 		$lama = $this->input->post('lamakomuditi');
 		$baru = $this->input->post('barukomuditi');
 
-		$this->M_pasar->inserthargakomuditi($id, $nama,$lama, $baru);
+		$cek = $this->M_pasar->cekhargakomuditi($idh);
+
+		if ($cek == 1) {
+			$this->M_pasar->updatehargakomuditi($id, $idh, $lama, $baru);
+			redirect('pasar/updateharga');
+		} else {
+			$this->M_pasar->inserthargakomuditi($id, $lama, $baru);
+			redirect('pasar/updateharga');
+		}
+		
+
+		$this->M_pasar->inserthargakomuditi($id, $idh, $nama,$lama, $baru);
 		redirect('pasar/updateharga');
 	}
 }

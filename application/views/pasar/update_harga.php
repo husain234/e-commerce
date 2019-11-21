@@ -38,6 +38,10 @@
             </select>
           </div>
           <div class="form-group">
+            <label for="inputAddress">Id Harga</label>
+            <input type="text" class="form-control" name="idharga" id="idharga" placeholder="Nama Barang">
+          </div>
+          <div class="form-group">
             <label for="inputAddress">Barang</label>
             <input type="text" class="form-control" name="namakomuditi" id="nama_komuditi" placeholder="Nama Barang">
           </div>
@@ -93,16 +97,20 @@
                         var nama = '';
                         var lama = '';
                         var baru = '';
+                        var idharga = '';
                         var i;
                         for(i=0; i<data.length; i++){
                             nama += data[i].nama_komuditi;
                             lama += data[i].harga_lama;
                             baru += data[i].harga_baru;
+                            idharga += data[i].id_harga;
                         }
 
+                        window.alert(idharga);
                         document.getElementById("nama_komuditi").value = nama;
                         document.getElementById("hama_komuditi").value = lama;
                         document.getElementById("haru_komuditi").value = baru;
+                        document.getElementById("idharga").value = idharga;
  
                     }
                 });
