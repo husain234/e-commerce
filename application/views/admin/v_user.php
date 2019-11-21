@@ -26,20 +26,28 @@
     <section class="content">
       <!-- Info boxes -->
       <div class="col-sm-6">
-        <form>
+        <form method="post" action="Tambahadmin/insertadmin/">
           <div class="form-group">
-            <label for="inputAddress">Nama</label>
-            <input type="text" class="form-control" id="inputAddress" placeholder="Nama Barang">
+            <label >Nama</label>
+            <input type="text" class="form-control" placeholder="Masukkan Nama" name="nama_user" >
           </div>
           <div class="form-group">
-            <label for="inputAddress">Tanggal Lahir </label>
-            <input type="text" class="form-control" id="inputAddress" placeholder="Masukkan Jumlah(Ton)">
+            <label >Username</label>
+            <input type="text" class="form-control"  placeholder="Masukkan Username" name="username">
           </div>
           <div class="form-group">
-            <label for="inputAddress">Alamat </label>
-            <input type="text" class="form-control" id="inputAddress" placeholder="Masukkan Jumlah">
+            <label >Password</label>
+            <input type="Password" class="form-control" placeholder="Masukkan Password" name="password">
           </div>
-          <button type="submit" class="btn btn-primary">Create</button>
+           <div class="form-group">
+            <label >Level</label>
+            <select  name="id_level">
+                  <option value="1">Admin Kominfo</option>
+                  <option value="2">Admin Perdagangan</option>
+                  <option value="3">Admin Ketahanan Pangan</option>
+            </select>
+          </div>
+          <button type="submit" class="btn btn-primary">Simpan</button>
         </form>
       </div>
       <!-- /.row -->
