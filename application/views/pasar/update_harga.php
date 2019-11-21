@@ -106,7 +106,6 @@
                             idharga += data[i].id_harga;
                         }
 
-                        window.alert(idharga);
                         document.getElementById("nama_komuditi").value = nama;
                         document.getElementById("hama_komuditi").value = lama;
                         document.getElementById("haru_komuditi").value = baru;
