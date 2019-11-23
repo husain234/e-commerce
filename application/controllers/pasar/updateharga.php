@@ -17,6 +17,7 @@ class updateharga extends CI_Controller {
 		} else {
 			if ($user == 'Admin Perdagangan') {
 				$data['id_komuditi'] = $this->M_pasar->idkomuditi();
+				$data['komuditi'] = $this->M_pasar->komuditipasar($this->session->userdata('idpasar'));
 				$this->load->view('pasar/update_harga',$data);
 			} else {
 				redirect('../login/logout');

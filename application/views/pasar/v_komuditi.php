@@ -56,6 +56,30 @@
         </form>
       </div>
       <!-- /.row -->
+
+      <div class="col-sm-6">
+        <table class="table table-bordered">
+          <thead>
+            <tr>
+              <th scope="col">No</th>
+              <th scope="col">id_komoditi</th>
+              <th scope="col">Komoditi</th>
+            </tr>
+          </thead>
+
+          <?php $no = 1;
+          foreach ($komuditi as $k) { ?>
+          <tbody>
+            <tr>
+              <th scope="row"><?php echo $no ?></th>
+              <td><?php echo $k['id_komuditi'] ?></td>
+              <td><?php echo $k['nama_komuditi'] ?></td>
+            </tr>
+          </tbody>
+        <?php $no++;
+         }  ?>
+        </table>
+      </div>
     </section>
     <!-- /.content -->
   </div>

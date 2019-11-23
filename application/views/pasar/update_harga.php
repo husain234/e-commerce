@@ -45,7 +45,7 @@
             <label for="inputAddress">Barang</label>
             <input type="text" class="form-control" name="namakomuditi" id="nama_komuditi" placeholder="Nama Barang">
           </div>
-          <div class="form-group">
+          <div class="form-group" hidden="true">
             <label for="inputAddress">Harga Lama</label>
             <input type="text" class="form-control" name="lamakomuditi" id="hama_komuditi" placeholder="Masukkan Harga(Rp)">
           </div>
@@ -73,6 +73,34 @@
         </form>
       </div>
       <!-- /.row -->
+
+      <div class="col-sm-6">
+        <table class="table table-bordered">
+          <thead>
+            <tr>
+              <th scope="col">No</th>
+              <th scope="col">Komoditi</th>
+              <th scope="col">Tanggal</th>
+              <th scope="col">Harga Lama</th>
+              <th scope="col">Harga Baru</th>
+            </tr>
+          </thead>
+
+          <?php $no = 1;
+          foreach ($komuditi as $k) { ?>
+          <tbody>
+            <tr>
+              <th scope="row"><?php echo $no ?></th>
+              <td><?php echo $k['nama_komuditi'] ?></td>
+              <td><?php echo $k['tanggal'] ?></td>
+              <td><?php echo $k['harga_lama'] ?></td>
+              <td><?php echo $k['harga_baru'] ?></td>
+            </tr>
+          </tbody>
+        <?php $no++;
+         }  ?>
+        </table>
+      </div>
     </section>
     <!-- /.content -->
   </div>

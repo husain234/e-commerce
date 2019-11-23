@@ -14,6 +14,11 @@ class M_pasar extends CI_Model {
 		return $query->result_array();
 	}
 
+	public function komuditipasar($idpasar) {
+		$query = $this->db->query("SELECT * FROM komuditi a LEFT JOIN harga_komuditi b ON a.id_komuditi = b.id_komuditi WHERE b.id_pasar = '$idpasar'");
+		return $query->result_array();
+	}
+
 	public function komuditi($id,$idpasar) {
 		$query = $this->db->query("SELECT * FROM komuditi a LEFT JOIN harga_komuditi b ON a.id_komuditi = b.id_komuditi WHERE a.id_komuditi = '$id' AND b.id_pasar = '$idpasar'");
 		return $query;

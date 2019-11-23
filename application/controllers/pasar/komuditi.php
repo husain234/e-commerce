@@ -16,7 +16,8 @@ class komuditi extends CI_Controller {
 			redirect('../login/logout');
 		} else {
 			if ($user == 'Admin Perdagangan') {
-				$this->load->view('pasar/v_komuditi');
+				$data['komuditi'] = $this->M_pasar->idkomuditi();
+				$this->load->view('pasar/v_komuditi',$data);
 			} else {
 				redirect('../login/logout');
 			}
