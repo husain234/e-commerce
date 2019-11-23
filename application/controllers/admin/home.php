@@ -7,7 +7,7 @@ class Home extends CI_Controller
 {
 
 	function index() {
-		$user = $this->session->userdata('level');
+		$user = $this->session->userdata();
 		if (empty($user)) {
 			redirect('../login');
 		} else {

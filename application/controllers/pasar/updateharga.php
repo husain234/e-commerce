@@ -28,30 +28,29 @@ class updateharga extends CI_Controller {
 
 	public function datakomuditi() {
 		$id = $this->input->post('id',TRUE);
-        $nama = $this->M_pasar->komuditi($id)->result_array();
+		$idpasar = $this->input->post('idpasar',TRUE);
+
+        $nama = $this->M_pasar->komuditi($id, $idpasar)->result_array();
         echo json_encode($nama);
 	}
 
 	public function updatekomuditi() {
 		$id = $this->input->post('idkomuditi');
 		$idh = $this->input->post('idharga');
-		$nama = $this->input->post('namakomuditi');
 		$lama = $this->input->post('lamakomuditi');
 		$baru = $this->input->post('barukomuditi');
+		$idpasar = $this->input->post('id_pasar');
 
-		$cek = $this->M_pasar->cekhargakomuditi($idh);
+		$cek = $this->M_pasar->cekhargakomuditi($idh, $idpasar);
 
 		if ($cek == 1) {
-			$this->M_pasar->updatehargakomuditi($id, $idh, $lama, $baru);
+			$this->M_pasar->updatehargakomuditi($id, $idh, $lama, $baru, $idpasar);
 			redirect('pasar/updateharga');
 		} else {
-			$this->M_pasar->inserthargakomuditi($id, $lama, $baru);
+			$this->M_pasar->inserthargakomuditi($id, $lama, $baru, $idpasar);
 			redirect('pasar/updateharga');
 		}
-		
 
-		$this->M_pasar->inserthargakomuditi($id, $idh, $nama,$lama, $baru);
-		redirect('pasar/updateharga');
 	}
 }
 ?>

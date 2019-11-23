@@ -8,7 +8,7 @@
           <img>
         </div>
         <div class="pull-left info">
-          <p><?php echo $user['nama']; ?></p>
+          <p><?php echo $user['nama']; ?> (<?php echo $user['pasar']; ?>)</p>
           <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
         </div>
       </div>
