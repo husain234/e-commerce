@@ -133,119 +133,24 @@
  		<div class="container">
 
         <div class="row">
-                <div class="col-lg-12">
+            <div class="col-lg-12">
                 <p style="font-size:24px" align="right"> Harga Rata-rata Komoditi di Kabupaten Malang </br> 
             </div>
-           
-           
-                        <div class="col-lg-3 col-md-4 col-xs-6 thumb">
+
+           <?php foreach ($avgkomuditi as $avgc) { ?>
+            <div class="col-lg-3 col-md-4 col-xs-6 thumb">
                 <a class="thumbnail" href="#">
                    <img src="assets/images/img/Susu.jpg" width="100%" height="130">
-                   <p>Susu Sapi</p>
+                   <p><?php echo $avgc['nama_komuditi']; ?></p>
                       
-				   <div style="font-size:20px">Rp 9.100,00 / L				   </div> 
+				   <div style="font-size:20px"><?php echo "Rp " . number_format($avgc['hargabaru'],2,',','.'); ?></div> 
 				 
 				   <div style="float:left "> <img src="assets/img/Up.png" width="50" height="32"> 
 				   </div>
-				   <div align="right"> sebelumnya Rp 9.000,00 | <p  style="color:red">Rp 100,00 | 1,11%</p></div>
+				   <div align="right"> sebelumnya <?php echo "Rp " . number_format($avgc['hargalama'],2,',','.'); ?> | <p  style="color:red">Rp 100,00 | 1,11%</p></div>
                 </a>
             </div>
-                       <div class="col-lg-3 col-md-4 col-xs-6 thumb">
-                <a class="thumbnail" href="#">
-                   <img src="assets/images/img/minyak.jpg" width="100%" height="130">
-                   <p>Minyak Goreng Curah</p>
-                      
-				   <div style="font-size:20px">Rp 10.500,00 / Kg				   </div> 
-				 
-				   <div style="float:left "> <img src="assets/img/-.png" width="50" height="32"> 
-				   </div>
-				   <div align="right"> sebelumnya Rp 10.500,00 | <p  style="color:red">Rp 0,00 | 0,00%</p></div>
-                </a>
-            </div>
-                       <div class="col-lg-3 col-md-4 col-xs-6 thumb">
-                <a class="thumbnail" href="#">
-                   <img src="assets/images/img/daging.jpg" width="100%" height="130">
-                   <p>Daging Sapi</p>
-                      
-				   <div style="font-size:20px">Rp 108.000,00 / Kg				   </div> 
-				 
-				   <div style="float:left "> <img src="assets/img/-.png" width="50" height="32"> 
-				   </div>
-				   <div align="right"> sebelumnya Rp 108.000,00 | <p  style="color:red">Rp 0,00 | 0,00%</p></div>
-                </a>
-            </div>
-                       <div class="col-lg-3 col-md-4 col-xs-6 thumb">
-                <a class="thumbnail" href="#">
-                   <img src="assets/images/img/ayam.jpg" width="100%" height="130">
-                   <p>Daging Ayam Potong</p>
-                      
-				   <div style="font-size:20px">Rp 32.000,00 / Kg				   </div> 
-				 
-				   <div style="float:left "> <img src="assets/img/Up.png" width="50" height="32"> 
-				   </div>
-				   <div align="right"> sebelumnya Rp 29.000,00 | <p  style="color:red">Rp 3.000,00 | 10,34%</p></div>
-                </a>
-            </div>
-                       <div class="col-lg-3 col-md-4 col-xs-6 thumb">
-                <a class="thumbnail" href="#">
-                   <img src="assets/images/img/telur.jpg" width="100%" height="130">
-                   <p>Telur Ayam Broiler</p>
-                      
-				   <div style="font-size:20px">Rp 20.000,00 / Kg				   </div> 
-				 
-				   <div style="float:left "> <img src="assets/img/Down.png" width="50" height="32"> 
-				   </div>
-				   <div align="right"> sebelumnya Rp 21.000,00 | <p  style="color:red">Rp 1.000,00 | 4,76%</p></div>
-                </a>
-            </div>
-                       <div class="col-lg-3 col-md-4 col-xs-6 thumb">
-                <a class="thumbnail" href="#">
-                   <img src="assets/images/img/garam.jpg" width="100%" height="130">
-                   <p>Garam Yodium</p>
-                      
-				   <div style="font-size:20px">Rp 1.000,00 / Bungkus				   </div> 
-				 
-				   <div style="float:left "> <img src="assets/img/-.png" width="50" height="32"> 
-				   </div>
-				   <div align="right"> sebelumnya Rp 1.000,00 | <p  style="color:red">Rp 0,00 | 0,00%</p></div>
-                </a>
-            </div>
-                       <div class="col-lg-3 col-md-4 col-xs-6 thumb">
-                <a class="thumbnail" href="#">
-                   <img src="assets/images/img/cabe.jpg" width="100%" height="130">
-                   <p>Cabe Merah Besar</p>
-                      
-				   <div style="font-size:20px">Rp 38.000,00 / Kg				   </div> 
-				 
-				   <div style="float:left "> <img src="assets/img/Up.png" width="50" height="32"> 
-				   </div>
-				   <div align="right"> sebelumnya Rp 24.000,00 | <p  style="color:red">Rp 14.000,00 | 58,33%</p></div>
-                </a>
-            </div>
-                       <div class="col-lg-3 col-md-4 col-xs-6 thumb">
-                <a class="thumbnail" href="#">
-                   <img src="assets/images/img/kacang.jpg" width="100%" height="130">
-                   <p>Kacang Tanah</p>
-                      
-				   <div style="font-size:20px">Rp 23.000,00 / Kg				   </div> 
-				 
-				   <div style="float:left "> <img src="assets/img/-.png" width="50" height="32"> 
-				   </div>
-				   <div align="right"> sebelumnya Rp 23.000,00 | <p  style="color:red">Rp 0,00 | 0,00%</p></div>
-                </a>
-            </div>
-                       <div class="col-lg-3 col-md-4 col-xs-6 thumb">
-                <a class="thumbnail" href="#">
-                   <img src="assets/images/img/gula.jpg" width="100%" height="130">
-                   <p>Gula Pasir</p>
-                      
-				   <div style="font-size:20px">Rp 12.000,00 / Kg				   </div> 
-				 
-				   <div style="float:left "> <img src="assets/img/-.png" width="50" height="32"> 
-				   </div>
-				   <div align="right"> sebelumnya Rp 12.000,00 | <p  style="color:red">Rp 0,00 | 0,00%</p></div>
-                </a>
-            </div>
+            <?php } ?>        
     </section>
 		
 		
