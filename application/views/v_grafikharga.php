@@ -27,6 +27,10 @@
     <link rel="stylesheet" href="<?php echo base_url();?>assets/css/flaticon.css">
     <link rel="stylesheet" href="<?php echo base_url();?>assets/css/icomoon.css">
     <link rel="stylesheet" href="<?php echo base_url();?>assets/css/style.css">
+
+    <script src="<?php echo base_url().'assets/js/highcharts.js'?>"></script>
+	<script src="<?php echo base_url().'assets/js/series-label.js'?>"></script>
+	<script src="<?php echo base_url().'assets/js/exporting.js'?>"></script>
   </head>
 <body class="goto-here">
         
@@ -104,70 +108,98 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-12">
-                    <h1 class="page-head-line">Informasi  Bahan Pokok per Kecamatan </h1>
+                    <h1 class="page-head-line">Grafik Harga </h1>
                 </div>
             </div>
       
     <table width="60%"  border="0" cellspacing="0" cellpadding="0">
   
-      <tr>
-        
+      <tr> 
         <form action="index.php?hal=kecamatan&cari=ok" method="post">
-        <th scope="row">
-          <select id="IdKecamatan" name="IdKecamatan" class="form-control">
-            <option value="">--Pilih Kecamatan--</option>
-              <?php foreach($kecamatan as $row):?>
-            <option value="<?php echo $row['id_kecamatan'];?>"><?php echo $row['nama_kecamatan'];?></option>
-              <?php endforeach;?>            
-          </select></th>
-        <!-- <td><select id="jenis_komoditi" name="jenis_komoditi"  class="form-control">
-          
-          <option value="1">Sembako</option>
-          <option  value="2">Komoditi Lain</option>
-        </select></td> -->
-        <th scope="row"><input type="text" name="NamaKomoditi" id="NamaKomoditi" placeholder="ketik nama komoditi ..." class="form-control" /></th>
-        <th scope="row"><input class="btn btn-danger" type="submit" name="Submit" value="Filter"></th>
+	        <th scope="row">
+	          <select id="IdKecamatan" name="IdKecamatan" class="form-control">
+	            <option value="">--Pilih Kecamatan--</option>
+	              <?php foreach($kecamatan as $row):?>
+	            <option value="<?php echo $row['id_kecamatan'];?>"><?php echo $row['nama_kecamatan'];?></option>
+	              <?php endforeach;?>            
+	          </select>
+	      	</th>
+       		<th scope="row">
+	          <select id="IdKecamatan" name="IdKecamatan" class="form-control">
+	            <option value="">--Bahan Pokok--</option>
+	              <?php foreach($komuditi as $rows):?>
+	            <option value="<?php echo $rows['id_komuditi'];?>"><?php echo $rows['nama_komuditi'];?></option>
+	              <?php endforeach;?>            
+	          </select>
+	      	</th>
+	      	<th scope="row">
+	          <select id="IdKecamatan" name="IdKecamatan" class="form-control">
+	            <option value="">--Tahun--</option>
+	              <?php foreach($kecamatan as $row):?>
+	            <option value="<?php echo $row['id_kecamatan'];?>"><?php echo $row['nama_kecamatan'];?></option>
+	              <?php endforeach;?>            
+	          </select>
+	      	</th>
         </form>
       </tr>
     </table>
 
-    </br>
-  
-     <div class="table-responsive">
-   <table class="table table-striped table-bordered table-hover">
-    <thead>
-     <tr>
-     <th><div align="center">No</div></th>
-      <th><div align="center">Komoditi</div></th>
-      <th><div align="center">Harga Lama (Rp)</div></th>
-      <th><div align="center">Harga Baru (Rp)</div></th>
-      <th><div align="center">Selisih (Rp)</div></th>
-      <th><div align="center">Tanggal</div></th>
-    <!--   <th><div align="center">Show Graph</div></th> -->
-     </tr>
-    </thead>
-    <?php $no = 1;
-    foreach ($komuditiharga as $kh) { ?>
-    <tbody>
-      <tr>
-        <td><div align="center"><?php echo $no; ?></div></td>
-        <td><?php echo $kh['nama_komuditi']; ?></td>
-        <td><div align="right"><?php echo "Rp " . number_format($kh['hargalama'],2,',','.'); ?></div></td> 
-        <td><div align="right"><?php echo "Rp " . number_format($kh['hargabaru'],2,',','.'); ?></div></td>
-        <td><div align="right"><img src="assets/img/-.png" width="20" height="10"> <?php echo "Rp " . number_format($kh['selisih'],2,',','.'); ?> | <?php echo intval($kh['persel']); ?>%</div></td>
-        <td><div align="right"><?php echo date('d M Y', strtotime($kh['tanggal'])); ?></div></td>
-      </tr>
-    </tbody>
-    <?php $no++;
-    } ?>
-   </table>
-   </div>
-  </div>
-     </div>
-  </div>
- </body>        <!-- angular templating -->
-        <!-- this is where content will be injected --> 
-  </div>
+    <div id="container" style="min-width: 310px; height: 400px; margin: 0 auto"></div>
+
+    <script>
+    	// Data retrieved from http://vikjavev.no/ver/index.php?spenn=2d&sluttid=16.06.2015.
+
+		Highcharts.chart('container', {
+		    chart: {
+		        type: 'spline',
+		        scrollablePlotArea: {
+		            minWidth: 600,
+		            scrollPositionX: 1
+		        }
+		    },
+		    title: {
+		        text: 'Grafik Harga',
+		        align: 'left'
+		    },
+		    subtitle: {
+		        text: '',
+		        align: 'left'
+		    },
+		    xAxis: {
+		        type: 'datetime',
+		        labels: {
+		            overflow: 'justify'
+		        }
+		    },
+		    yAxis: {
+		        title: {
+		        	text:''
+		        }
+		    },
+		    tooltip: {
+		        valueSuffix: ' m/s'
+		    },
+	        credits: {
+	             enabled: false
+	        },
+		    series: [{
+		        name: 'Hestavollane',
+		        data: [
+		            3.7, 3.3, 3.9, 5.1, 3.5, 3.8, 4.0, 5.0, 6.1, 3.7, 3.3, 6.4,
+		            6.9, 6.0, 6.8, 4.4, 4.0, 3.8, 5.0, 4.9, 9.2, 9.6, 9.5, 6.3,
+		            9.5, 10.8, 14.0, 11.5, 10.0, 10.2, 10.3, 9.4, 8.9, 10.6, 10.5, 11.1,
+		            10.4, 10.7, 11.3, 10.2, 9.6, 10.2, 11.1, 10.8, 13.0, 12.5, 12.5, 11.3,
+		            10.1
+		        ]
+
+		    }],
+		    navigation: {
+		        menuItemStyle: {
+		            fontSize: '10px'
+		        }
+		    }
+		});
+    </script>
 
 
 
@@ -176,24 +208,6 @@
   
     <p>Copyright 2015 bag-pde.malangkab.go.id</a></p>
   </footer>
-  
-</body>
-<script type="text/javascript">
-
-  var _gaq = _gaq || [];
-  _gaq.push(['_setAccount', 'UA-36251023-1']);
-  _gaq.push(['_setDomainName', 'jqueryscript.net']);
-  _gaq.push(['_trackPageview']);
-
-  (function() {
-    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-  })();
-
-</script>
-</html>
-
 
 
 

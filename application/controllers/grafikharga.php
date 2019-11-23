@@ -3,7 +3,7 @@
 /**
 * 
 */
-class infoharga extends CI_Controller {
+class grafikharga extends CI_Controller {
 
 	function __construct() {
 		parent::__construct();
@@ -11,9 +11,9 @@ class infoharga extends CI_Controller {
 	}
 
 	function index() {
-		$data['komuditiharga'] = $this->M_user->infoharga();
 		$data['kecamatan'] = $this->M_user->kecamatan();
-		$this->load->view('v_infoharga',$data);
+		$data['komuditi'] = $this->M_user->komuditi();
+		$this->load->view('v_grafikharga',$data);
 	}
 }
 ?>

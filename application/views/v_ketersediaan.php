@@ -42,7 +42,7 @@
              <li class="nav-item active"><a href="<?php echo base_url('beranda') ?>" class="nav-link">Beranda</a></li>
               <li class="nav-item dropdown">
               <li class="nav-item active"><a href="<?php echo base_url('infoharga')?>" class="nav-link">Info Harga</a></li>
-              <li class="nav-item active"><a href="<?php echo base_url('')?>" class="nav-link">Grafik Harga</a></li>
+              <li class="nav-item active"><a href="<?php echo base_url('grafikharga')?>" class="nav-link">Grafik Harga</a></li>
               <li class="nav-item active"><a href="<?php echo base_url('sedia')?>" class="nav-link">Ketersediaan</a></li>
               <li class="nav-item active"><a href="<?php echo base_url('kami')?>" class="nav-link">Tentang Kami</a></li>
             </ul>
