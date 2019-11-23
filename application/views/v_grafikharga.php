@@ -146,6 +146,13 @@
 
     <div id="container" style="min-width: 310px; height: 400px; margin: 0 auto"></div>
 
+     <?php foreach ($updateharga as $uh) {
+        $tanggal[] = $uh['tanggal'];
+        $harga[] = intval($uh['harga_baru']);
+      } ?>  
+
+      
+
     <script>
     	// Data retrieved from http://vikjavev.no/ver/index.php?spenn=2d&sluttid=16.06.2015.
 
@@ -166,10 +173,7 @@
 		        align: 'left'
 		    },
 		    xAxis: {
-		        type: 'datetime',
-		        labels: {
-		            overflow: 'justify'
-		        }
+		        categories: <?php echo json_encode($tanggal); ?>
 		    },
 		    yAxis: {
 		        title: {
@@ -184,13 +188,7 @@
 	        },
 		    series: [{
 		        name: 'Hestavollane',
-		        data: [
-		            3.7, 3.3, 3.9, 5.1, 3.5, 3.8, 4.0, 5.0, 6.1, 3.7, 3.3, 6.4,
-		            6.9, 6.0, 6.8, 4.4, 4.0, 3.8, 5.0, 4.9, 9.2, 9.6, 9.5, 6.3,
-		            9.5, 10.8, 14.0, 11.5, 10.0, 10.2, 10.3, 9.4, 8.9, 10.6, 10.5, 11.1,
-		            10.4, 10.7, 11.3, 10.2, 9.6, 10.2, 11.1, 10.8, 13.0, 12.5, 12.5, 11.3,
-		            10.1
-		        ]
+		        data: <?php echo json_encode($harga); ?>
 
 		    }],
 		    navigation: {

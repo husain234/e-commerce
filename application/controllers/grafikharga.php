@@ -13,6 +13,7 @@ class grafikharga extends CI_Controller {
 	function index() {
 		$data['kecamatan'] = $this->M_user->kecamatan();
 		$data['komuditi'] = $this->M_user->komuditi();
+		$data['updateharga'] = $this->M_user->updateharga();
 		$this->load->view('v_grafikharga',$data);
 	}
 }

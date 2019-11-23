@@ -24,5 +24,10 @@
  		$query = $this->db->query("SELECT * FROM komuditi");
  		return $query->result_array();
  	}
+
+ 	public function updateharga() {
+ 		$query = $this->db->query("SELECT tanggal, harga_baru FROM updateharga WHERE id_komuditi = '01' AND id_pasar = '01'");
+ 		return $query->result_array();
+ 	}
  } 
  ?>
