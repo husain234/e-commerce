@@ -5,8 +5,7 @@
       <!-- Sidebar user panel -->
       <div class="user-panel">
         <div class="pull-left image">
-          <img src="<?php echo base_url('assets/template/dist
-       ') ?>/img/user2-160x160.jpg" class="img-circle" alt="User Image">
+          <img>
         </div>
         <div class="pull-left info">
           <p><?php echo $user['nama']; ?></p>
@@ -48,6 +47,12 @@
             <li><a href="pages/layout/collapsed-sidebar.html"><i class="fa fa-circle-o"></i> Collapsed Sidebar</a></li>
           </ul>
         </li>
+        <li class="active menu-open">
+          <a href="<?php echo base_url().'login/logout' ?>">
+            <i class="fa fa-th"></i> <span>Logout</span>
+          </a>
+        </li>
+
         <!-- <li>
           <a href="pages/widgets.html">
             <i class="fa fa-th"></i> <span>Widgets</span>
