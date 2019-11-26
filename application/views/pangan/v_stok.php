@@ -29,7 +29,12 @@
         <form>
           <div class="form-group">
             <label for="inputAddress">Nama</label>
-            <input type="text" class="form-control" id="inputAddress" placeholder="Nama Barang">
+            <select class="form-control" name="idkomuditi" id="id_komuditi" required>
+              <option value="">No Selected</option>
+              <?php foreach($id_komuditi as $row):?>
+              <option value="<?php echo $row['id_komuditi'];?>"><?php echo $row['nama_komuditi'];?></option>
+              <?php endforeach;?>
+            </select>
           </div>
           <div class="form-group">
             <label for="inputAddress">Jumlah</label>
