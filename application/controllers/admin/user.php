@@ -11,7 +11,7 @@ class user extends CI_Controller
 		if (empty($user)) {
 			redirect('../login/logout');
 		} else {
-			if ($user == 'admin') {
+			if ($user == 'Admin Kominfo') {
 				$this->load->view('admin/v_user');
 			} else {
 				redirect('../login/logout');

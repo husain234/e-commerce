@@ -1,4 +1,4 @@
-komuditi.php<?php
+<?php
 
 /**
 * 
