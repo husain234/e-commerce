@@ -145,8 +145,6 @@
                       
 				   <div style="font-size:20px"><?php echo "Rp " . number_format($avgc['hargabaru'],2,',','.'); ?></div> 
 				 
-				   <div style="float:left "> <img src="assets/img/Up.png" width="50" height="32"> 
-				   </div>
 				   <div align="right"> sebelumnya <?php echo "Rp " . number_format($avgc['hargalama'],2,',','.'); ?> | <p  style="color:red">Rp 100,00 | 1,11%</p></div>
                 </a>
             </div>

@@ -115,7 +115,7 @@
     <table width="60%"  border="0" cellspacing="0" cellpadding="0">
   
       <tr> 
-        <form action="index.php?hal=kecamatan&cari=ok" method="post">
+        <form action="<?php echo base_url().'grafikharga' ?>" method="post">
 	        <th scope="row">
 	          <select id="IdKecamatan" name="IdKecamatan" class="form-control">
 	            <option value="">--Pilih Kecamatan--</option>
@@ -125,7 +125,7 @@
 	          </select>
 	      	</th>
        		<th scope="row">
-	          <select id="IdKecamatan" name="IdKecamatan" class="form-control">
+	          <select id="IdKecamatan" name="IdKomuditi" class="form-control">
 	            <option value="">--Bahan Pokok--</option>
 	              <?php foreach($komuditi as $rows):?>
 	            <option value="<?php echo $rows['id_komuditi'];?>"><?php echo $rows['nama_komuditi'];?></option>
@@ -143,75 +143,80 @@
               <?php } ?>
             </select>
 	      	</th>
+          <th scope="row">
+            <button class="btn btn-danger ml-4">Cari</button>
+          </th>
         </form>
       </tr>
     </table>
 
-    <div id="container" style="min-width: 310px; height: 400px; margin: 0 auto"></div>
+    <?php if (!empty($updateharga)) { ?>
+
+      <div id="container" style="min-width: 310px; height: 400px; margin: 0 auto"></div>
 
      <?php foreach ($updateharga as $uh) {
+        $nama = $uh['nama_komuditi'];
         $tanggal[] = $uh['tanggal'];
         $harga[] = intval($uh['harga_baru']);
       } ?>  
 
-      
+      <script>
+        // Data retrieved from http://vikjavev.no/ver/index.php?spenn=2d&sluttid=16.06.2015.
 
-    <script>
-    	// Data retrieved from http://vikjavev.no/ver/index.php?spenn=2d&sluttid=16.06.2015.
+      Highcharts.chart('container', {
+          chart: {
+              type: 'spline',
+              scrollablePlotArea: {
+                  minWidth: 600,
+                  scrollPositionX: 1
+              }
+          },
+          title: {
+              text: 'Grafik Harga',
+              align: 'left'
+          },
+          subtitle: {
+              text: '<?php echo $nama; ?>',
+              align: 'left'
+          },
+          xAxis: {
+              categories: <?php echo json_encode($tanggal); ?>
+          },
+          yAxis: {
+              title: {
+                text:''
+              }
+          },
+          tooltip: {
+              valueSuffix: ' m/s'
+          },
+            credits: {
+                 enabled: false
+            },
+          series: [{
+              name: 'Hestavollane',
+              data: <?php echo json_encode($harga); ?>
 
-		Highcharts.chart('container', {
-		    chart: {
-		        type: 'spline',
-		        scrollablePlotArea: {
-		            minWidth: 600,
-		            scrollPositionX: 1
-		        }
-		    },
-		    title: {
-		        text: 'Grafik Harga',
-		        align: 'left'
-		    },
-		    subtitle: {
-		        text: '',
-		        align: 'left'
-		    },
-		    xAxis: {
-		        categories: <?php echo json_encode($tanggal); ?>
-		    },
-		    yAxis: {
-		        title: {
-		        	text:''
-		        }
-		    },
-		    tooltip: {
-		        valueSuffix: ' m/s'
-		    },
-	        credits: {
-	             enabled: false
-	        },
-		    series: [{
-		        name: 'Hestavollane',
-		        data: <?php echo json_encode($harga); ?>
+          }],
+          navigation: {
+              menuItemStyle: {
+                  fontSize: '10px'
+              }
+          }
+      });
+      </script>
 
-		    }],
-		    navigation: {
-		        menuItemStyle: {
-		            fontSize: '10px'
-		        }
-		    }
-		});
-    </script>
-
-
+    <?php } else { ?>
+      <div style="margin: 200px;">
+        <h3 align="center">Tidak ada</h3>
+      </div>
+    <?php } ?>
 
   <footer class="text-center">
     <p><a href="http://malangkab.go.id">Kabupaten Malang</a></p>
   
     <p>Copyright 2015 bag-pde.malangkab.go.id</a></p>
   </footer>
-
-
-
 
   <!-- loader -->
   <div id="ftco-loader" class="show fullscreen"><svg class="circular" width="48px" height="48px"><circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee"/><circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#F96D00"/></svg></div>

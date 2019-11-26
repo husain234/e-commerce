@@ -11,9 +11,16 @@ class infoharga extends CI_Controller {
 	}
 
 	function index() {
-		$data['komuditiharga'] = $this->M_user->infoharga();
-		$data['kecamatan'] = $this->M_user->kecamatan();
-		$this->load->view('v_infoharga',$data);
+		$kecamatan = $this->input->post('IdKecamatan');
+		if (!empty($kecamatan)) {
+			$data['komuditiharga'] = $this->M_user->infohargas($kecamatan);
+			$data['kecamatan'] = $this->M_user->kecamatan();
+			$this->load->view('v_infoharga',$data);
+		} else {
+			$data['komuditiharga'] = $this->M_user->infoharga();
+			$data['kecamatan'] = $this->M_user->kecamatan();
+			$this->load->view('v_infoharga',$data);
+		}
 	}
 }
 ?>

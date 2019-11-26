@@ -112,7 +112,7 @@
   
       <tr>
         
-        <form action="index.php?hal=kecamatan&cari=ok" method="post">
+        <form action="<?php echo base_url().'infoharga' ?>" method="post">
         <th scope="row">
           <select id="IdKecamatan" name="IdKecamatan" class="form-control">
             <option value="">--Pilih Kecamatan--</option>
@@ -125,8 +125,19 @@
           <option value="1">Sembako</option>
           <option  value="2">Komoditi Lain</option>
         </select></td> -->
-        <th scope="row"><input type="text" name="NamaKomoditi" id="NamaKomoditi" placeholder="ketik nama komoditi ..." class="form-control" /></th>
-        <th scope="row"><input class="btn btn-danger" type="submit" name="Submit" value="Filter"></th>
+        <!-- <th scope="row">
+          <th scope="row">
+            <select id="IdKecamatan" name="IdKomuditi" class="form-control">
+              <option value="">--Komuditi--</option>
+                <?php foreach($komuditi as $rows):?>
+              <option value="<?php echo $rows['id_komuditi'];?>"><?php echo $rows['nama_komuditi'];?></option>
+                <?php endforeach;?>            
+            </select>
+          </th>
+        </th> -->
+        <th scope="row">
+          <button class="btn btn-danger ml-3">Cari</button>
+        </th>
         </form>
       </tr>
     </table>
@@ -134,35 +145,44 @@
     </br>
   
      <div class="table-responsive">
-   <table class="table table-striped table-bordered table-hover">
-    <thead>
-     <tr>
-     <th><div align="center">No</div></th>
-      <th><div align="center">Komoditi</div></th>
-      <th><div align="center">Harga Lama (Rp)</div></th>
-      <th><div align="center">Harga Baru (Rp)</div></th>
-      <th><div align="center">Selisih (Rp)</div></th>
-      <th><div align="center">Tanggal</div></th>
-    <!--   <th><div align="center">Show Graph</div></th> -->
-     </tr>
-    </thead>
-    <?php $no = 1;
-    foreach ($komuditiharga as $kh) { ?>
-    <tbody>
-      <tr>
-        <td><div align="center"><?php echo $no; ?></div></td>
-        <td><?php echo $kh['nama_komuditi']; ?></td>
-        <td><div align="right"><?php echo "Rp " . number_format($kh['hargalama'],2,',','.'); ?></div></td> 
-        <td><div align="right"><?php echo "Rp " . number_format($kh['hargabaru'],2,',','.'); ?></div></td>
-        <td><div align="right"><img src="assets/img/-.png" width="20" height="10"> <?php echo "Rp " . number_format($kh['selisih'],2,',','.'); ?> | <?php echo intval($kh['persel']); ?>%</div></td>
-        <td><div align="right"><?php echo date('d M Y', strtotime($kh['tanggal'])); ?></div></td>
-      </tr>
-    </tbody>
-    <?php $no++;
-    } ?>
-   </table>
-   </div>
-  </div>
+
+        <?php if (!empty($komuditiharga)) { ?>
+
+         <table class="table table-striped table-bordered table-hover">
+          <thead>
+           <tr>
+           <th><div align="center">No</div></th>
+            <th><div align="center">Komoditi</div></th>
+            <th><div align="center">Harga Lama (Rp)</div></th>
+            <th><div align="center">Harga Baru (Rp)</div></th>
+            <th><div align="center">Selisih (Rp)</div></th>
+            <th><div align="center">Tanggal</div></th>
+          <!--   <th><div align="center">Show Graph</div></th> -->
+           </tr>
+          </thead>
+          <?php $no = 1;
+          foreach ($komuditiharga as $kh) { ?>
+          <tbody>
+            <tr>
+              <td><div align="center"><?php echo $no; ?></div></td>
+              <td><?php echo $kh['nama_komuditi']; ?></td>
+              <td><div align="right"><?php echo "Rp " . number_format($kh['hargalama'],2,',','.'); ?></div></td> 
+              <td><div align="right"><?php echo "Rp " . number_format($kh['hargabaru'],2,',','.'); ?></div></td>
+              <td><div align="right"><img src="assets/img/-.png" width="20" height="10"> <?php echo "Rp " . number_format($kh['selisih'],2,',','.'); ?> | <?php echo intval($kh['persel']); ?>%</div></td>
+              <td><div align="right"><?php echo date('d M Y', strtotime($kh['tanggal'])); ?></div></td>
+            </tr>
+          </tbody>
+          <?php $no++;
+          } ?>
+         </table>
+        <?php } else { ?>
+          <div style="margin: 200px;">
+            <h3 align="center">Tidak ada</h3>
+          </div>
+        <?php } ?>
+
+         </div>
+        </div>
      </div>
   </div>
  </body>        <!-- angular templating -->
