@@ -133,12 +133,15 @@
 	          </select>
 	      	</th>
 	      	<th scope="row">
-	          <select id="IdKecamatan" name="IdKecamatan" class="form-control">
-	            <option value="">--Tahun--</option>
-	              <?php foreach($kecamatan as $row):?>
-	            <option value="<?php echo $row['id_kecamatan'];?>"><?php echo $row['nama_kecamatan'];?></option>
-	              <?php endforeach;?>            
-	          </select>
+	          <select class="form-control mb-1" name="tahun">
+              <option value="">--Tahun--</option>
+              <?php
+                    $thn_skr = date('2019');
+                    for ($x = $thn_skr; $x >= 2017; $x--) {
+                  ?>
+              <option value="<?php echo $x ?>"><?php echo $x ?></option>
+              <?php } ?>
+            </select>
 	      	</th>
         </form>
       </tr>
