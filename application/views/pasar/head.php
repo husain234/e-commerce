@@ -12,6 +12,7 @@
   <link rel="stylesheet" href="<?php echo base_url('assets/template/bower_components') ?>/Ionicons/css/ionicons.min.css">
   <!-- jvectormap -->
   <link rel="stylesheet" href="<?php echo base_url('assets/template/bower_components') ?>/jvectormap/jquery-jvectormap.css">
+  <link rel="stylesheet" href="<?php echo base_url('assets/template/bower_components') ?>/datatables.net-bs/css/datatables.bootstrap.min.css">
   <!-- Theme style -->
   <link rel="stylesheet" href="<?php echo base_url('assets/template/dist') ?>/css/AdminLTE.min.css">
   <!-- AdminLTE Skins. Choose a skin from the css/skins
@@ -28,4 +29,5 @@
   <!-- Google Font -->
   <link rel="stylesheet"
         href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.20/css/jquery.dataTables.min.css">   
 </head>

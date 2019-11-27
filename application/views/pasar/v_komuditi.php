@@ -58,7 +58,7 @@
       <!-- /.row -->
 
       <div class="col-sm-6">
-        <table class="table table-bordered">
+        <table id="example" class="hover" style="width:100%">
           <thead>
             <tr>
               <th scope="col">No</th>
@@ -67,17 +67,19 @@
             </tr>
           </thead>
 
+          
+          <tbody>
           <?php $no = 1;
           foreach ($komuditi as $k) { ?>
-          <tbody>
             <tr>
-              <th scope="row"><?php echo $no ?></th>
+              <td scope="row"><?php echo $no ?></td>
               <td><?php echo $k['id_komuditi'] ?></td>
               <td><?php echo $k['nama_komuditi'] ?></td>
             </tr>
-          </tbody>
-        <?php $no++;
+            <?php $no++;
          }  ?>
+          </tbody>
+        
         </table>
       </div>
     </section>
