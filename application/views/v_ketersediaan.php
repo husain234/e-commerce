@@ -148,125 +148,34 @@
     </br>
   
      <div class="table-responsive">
-   <table class="table table-striped table-bordered table-hover">
-    <thead>
-     <tr>
-     <th><div align="center">No</div></th>
-      <th>Komoditi</th>
-      <th><div align="center">Ketersediaan (Ton)</div></th>
-    <th><div align="center">Kebutuhan (Ton)</div></th>
-    <th><div align="center">Surplus/Minus (Ton)</div></th>
-      
-     </tr>
-    </thead>
-    <tbody>
-  
-  
-     <tr>
-      <td><div align="center">1</div></td>
-      <td>Bawang Merah</td>
-      <td><div align="right">316,00</div></td>
-    <td><div align="right">612,00</div></td>
-      <td><div align="right">-296,00</div></td>
-     </tr>
-  
-     <tr>
-      <td><div align="center">2</div></td>
-      <td>Beras</td>
-      <td><div align="right">13.360,00</div></td>
-    <td><div align="right">19.514,00</div></td>
-      <td><div align="right">-6.154,00</div></td>
-     </tr>
-  
-     <tr>
-      <td><div align="center">3</div></td>
-      <td>Cabe Merah</td>
-      <td><div align="right">257,00</div></td>
-    <td><div align="right">226,00</div></td>
-      <td><div align="right">31,00</div></td>
-     </tr>
-  
-     <tr>
-      <td><div align="center">4</div></td>
-      <td>Cabe Rawit</td>
-      <td><div align="right">351,00</div></td>
-    <td><div align="right">590,00</div></td>
-      <td><div align="right">-239,00</div></td>
-     </tr>
-  
-     <tr>
-      <td><div align="center">5</div></td>
-      <td>Daging</td>
-      <td><div align="right">3.615,00</div></td>
-    <td><div align="right">1.494,00</div></td>
-      <td><div align="right">2.121,00</div></td>
-     </tr>
-  
-     <tr>
-      <td><div align="center">6</div></td>
-      <td>Gula</td>
-      <td><div align="right">0,00</div></td>
-    <td><div align="right">2.802,00</div></td>
-      <td><div align="right">-2.802,00</div></td>
-     </tr>
-  
-     <tr>
-      <td><div align="center">7</div></td>
-      <td>Ikan</td>
-      <td><div align="right">728,00</div></td>
-    <td><div align="right">6.230,00</div></td>
-      <td><div align="right">-5.502,00</div></td>
-     </tr>
-  
-     <tr>
-      <td><div align="center">8</div></td>
-      <td>Jagung</td>
-      <td><div align="right">6.431,00</div></td>
-    <td><div align="right">1.160,00</div></td>
-      <td><div align="right">5.271,00</div></td>
-     </tr>
-  
-     <tr>
-      <td><div align="center">9</div></td>
-      <td>Kacang Tanah</td>
-      <td><div align="right">21,00</div></td>
-    <td><div align="right">198,00</div></td>
-      <td><div align="right">-177,00</div></td>
-     </tr>
-  
-     <tr>
-      <td><div align="center">10</div></td>
-      <td>Kedele</td>
-      <td><div align="right">384,00</div></td>
-    <td><div align="right">2.513,00</div></td>
-      <td><div align="right">-2.129,00</div></td>
-     </tr>
-  
-     <tr>
-      <td><div align="center">11</div></td>
-      <td>Ketela Pohon</td>
-      <td><div align="right">14.158,00</div></td>
-    <td><div align="right">2.028,00</div></td>
-      <td><div align="right">12.130,00</div></td>
-     </tr>
-  
-     <tr>
-      <td><div align="center">12</div></td>
-      <td>susu</td>
-      <td><div align="right">12.513,00</div></td>
-    <td><div align="right">3.047,00</div></td>
-      <td><div align="right">9.466,00</div></td>
-     </tr>
-  
-     <tr>
-      <td><div align="center">13</div></td>
-      <td>Telur Ayam Ras</td>
-      <td><div align="right">3.872,00</div></td>
-    <td><div align="right">2.396,00</div></td>
-      <td><div align="right">1.476,00</div></td>
-     </tr>
-   
-    </tbody>
+     <table class="table table-striped table-bordered table-hover">
+      <thead>
+       <tr>
+        <th><div align="center">No</div></th>
+        <th>Komoditi</th>
+        <th><div align="center">Ketersediaan (Ton)</div></th>
+        <th><div align="center">Kebutuhan (Ton)</div></th>
+        <th><div align="center">Surplus/Minus (Ton)</div></th>
+       </tr>
+      </thead>
+      <?php 
+      $no = 1;
+      foreach ($sedia as $s) {
+        $nama = $s['nama_komuditi'];
+        $ketersediaan = $s['ketersediaan'];
+        $kebutuhan = $s['kebutuhan'];
+        $surplus = $s['ketersediaan']-$s['kebutuhan'];
+      ?>
+      <tbody>
+       <tr>
+        <td><div align="center"><?php echo $no; ?></div></td>
+        <td><?php echo $nama; ?></td>
+        <td><div align="right"><?php echo $ketersediaan; ?></div></td>
+        <td><div align="right"><?php echo $kebutuhan; ?></div></td>
+        <td><div align="right"><?php echo $surplus; ?></div></td>
+       </tr>   
+      </tbody>
+      <?php $no++; } ?>
    </table>
    </div>
    <div> - Data Konsumsi diambil dari data Survei Sosial Ekonomi Nasional (SUSENAS) </div> </br>

@@ -11,8 +11,8 @@ class sedia extends CI_Controller {
 	}
 
 	function index() {
-		$data['sedia'] = $this->M_user->
-		$this->load->view('v_ketersediaan');
+		$data['sedia'] = $this->M_user->informasi();
+		$this->load->view('v_ketersediaan',$data);
 	}
 }
 ?>
