@@ -26,21 +26,62 @@
     <section class="content">
       <!-- Info boxes -->
       <div class="col-sm-6">
-        <form>
+        <form action="<?php echo base_url().'pangan/stok/inputstok' ?>" method="post">
           <div class="form-group">
             <label for="inputAddress">Nama</label>
-            <input type="text" class="form-control" id="inputAddress" placeholder="Masukkan Barang">
+            <select class="form-control" name="idkomuditi" id="id_komuditi" required>
+              <option value="">No Selected</option>
+              <?php foreach($id_komuditi as $row):?>
+              <option value="<?php echo $row['id_komuditi'];?>"><?php echo $row['nama_komuditi'];?></option>
+              <?php endforeach;?>
+            </select>
+          </div>
+          <div class="form-group" hidden="true">
+            <label for="inputAddress">Id_Stok</label>
+            <input type="text" class="form-control" id="stok" name="id_informasi" placeholder="Masukkan Jumlah(Ton)">
           </div>
           <div class="form-group">
             <label for="inputAddress">Jumlah</label>
-            <input type="text" class="form-control" id="inputAddress" placeholder="Masukkan Jumlah(Ton)">
+            <input type="text" class="form-control" id="ketersediaan" name="jumlah" placeholder="Masukkan Jumlah(Ton)">
           </div>
           <div class="form-group">
             <label for="inputAddress">Kebutuhan</label>
-            <input type="text" class="form-control" id="inputAddress" placeholder="Masukkan Jumlah">
+            <input type="text" class="form-control" id="kebutuhan" name="kebutuhan" placeholder="Masukkan Jumlah">
           </div>
           <button type="submit" class="btn btn-primary">Create</button>
         </form>
+      </div>
+
+      <div class="col-sm-6">
+        <table id="example" class="hover" style="width:100%">
+          <thead>
+            <tr>
+              <th scope="col">No</th>
+              <th scope="col">Id</th>
+              <th scope="col">Komuditi</th>
+              <th scope="col">Tanggal</th>
+              <th scope="col">Ketersediaan</th>
+              <th scope="col">Kebutuhan</th>
+            </tr>
+          </thead>
+
+          
+          <tbody>
+          <?php $no = 1;
+          foreach ($stok as $k) { ?>
+            <tr>
+              <td scope="row"><?php echo $no ?></td>
+              <td><?php echo $k['id_informasi'] ?></td>
+              <td><?php echo $k['id_komuditi'] ?></td>
+              <td><?php echo $k['tanggal'] ?></td>
+              <td><?php echo $k['ketersediaan'] ?></td>
+              <td><?php echo $k['kebutuhan'] ?></td>
+            </tr>
+            <?php $no++;
+         }  ?>
+          </tbody>
+        
+        </table>
       </div>
       <!-- /.row -->
     </section>
@@ -49,5 +90,44 @@
   <!-- /.content-wrapper -->
 
 <?php $this->load->view('pangan/footer') ?>
+
+<script type="text/javascript" src="<?php echo base_url().'assets/js/jquery-3.3.1.js'?>"></script>
+    <script type="text/javascript" src="<?php echo base_url().'assets/js/bootstrap.js'?>"></script>
+    <script type="text/javascript">
+        $(document).ready(function(){
+ 
+            $('#id_komuditi').change(function(){ 
+                var id=$(this).val();
+
+                $.ajax({
+                    url : "<?php echo site_url('pangan/stok/datastok');?>",
+                    method : "POST",
+                    data : {id: id},
+                    async : true,
+                    dataType : 'json',
+                    success: function(data){
+                         
+                        var id_informasi = '';
+                        var ketersediaan = '';
+                        var kebutuhan = '';
+                        var i;
+                        for(i=0; i<data.length; i++){
+                            id_informasi += data[i].id_informasi;
+                            ketersediaan += data[i].ketersediaan;
+                            kebutuhan += data[i].kebutuhan;
+                        }
+
+                        document.getElementById("stok").value = id_informasi;
+                        document.getElementById("ketersediaan").value = ketersediaan;
+                        document.getElementById("kebutuhan").value = kebutuhan;
+ 
+                    }
+                });
+                return false;
+            }); 
+             
+        });
+    </script>
+
 </body>
 </html>

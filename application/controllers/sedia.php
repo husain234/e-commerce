@@ -3,11 +3,15 @@
 /**
 * 
 */
-class sedia extends CI_Controller
-{
+class sedia extends CI_Controller {
 
-	function index()
-	{
+	function __construct() {
+		parent::__construct();
+		$this->load->model('M_user');
+	}
+
+	function index() {
+		$data['sedia'] = $this->M_user->
 		$this->load->view('v_ketersediaan');
 	}
 }
