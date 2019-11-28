@@ -36,7 +36,7 @@
  	}
 
  	public function updatehargas($kecamatan, $komuditi, $tahun)	{
- 		$query = $this->db->query("SELECT nama_komuditi, tanggal, harga_baru FROM updateharga a LEFT JOIN komuditi b ON a.id_komuditi = b.id_komuditi LEFT JOIN pasar c ON a.id_pasar = c.id_pasar LEFT JOIN kecamatan d ON c.id_kecamatan = d.id_kecamatan WHERE a.id_komuditi = '$komuditi' AND c.id_kecamatan = '$kecamatan' AND YEAR(tanggal) = '$tahun'");
+ 		$query = $this->db->query("SELECT nama_komuditi, tanggal, harga_baru FROM updateharga a LEFT JOIN komuditi b ON a.id_komuditi = b.id_komuditi LEFT JOIN pasar c ON a.id_pasar = c.id_pasar LEFT JOIN kecamatan d ON c.id_kecamatan = d.id_kecamatan WHERE a.id_komuditi = '$komuditi' AND c.id_kecamatan = '$kecamatan' AND YEAR(tanggal) = '$tahun' LIMIT 40");
  		return $query->result_array();
  	}
  } 
