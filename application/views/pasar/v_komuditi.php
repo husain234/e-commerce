@@ -17,10 +17,7 @@
         Membuat Item
         <small>Pasar</small>
       </h1>
-      <ol class="breadcrumb">
-        <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
-        <li class="active">Dashboard</li>
-      </ol>
+     
     </section>
 
     <!-- Main content -->
@@ -36,22 +33,7 @@
             <label for="inputAddress">Barang</label>
             <input type="text" class="form-control" id="inputAddress" name="namabarang" placeholder="Nama Barang">
           </div>
-          <!-- <div class="form-group">
-            <label for="inputAddress">Email</label>
-            <input type="text" class="form-control" id="inputAddress" placeholder="Email">
-          </div>
-          <div class="form-group">
-            <label for="inputAddress2">No. Telp</label>
-            <input type="text" class="form-control" id="inputAddress2" placeholder="Nomer Telp">
-          </div> -->
-          <!-- <div class="form-group">
-            <div class="form-check">
-              <input class="form-check-input" type="checkbox" id="gridCheck">
-              <label class="form-check-label" for="gridCheck">
-                C
-              </label>
-            </div>
-          </div> -->
+         
           <button type="submit" class="btn btn-primary">Create</button>
         </form>
       </div>
