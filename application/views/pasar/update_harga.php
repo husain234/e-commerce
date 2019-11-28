@@ -17,10 +17,7 @@
         Membuat Item
         <small>Pasar</small>
       </h1>
-      <ol class="breadcrumb">
-        <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
-        <li class="active">Dashboard</li>
-      </ol>
+     
     </section>
 
     <!-- Main content -->
@@ -75,7 +72,7 @@
       <!-- /.row -->
 
       <div class="col-sm-6">
-        <table class="table table-bordered">
+        <table id="example" class="hover" style="width:100%">
           <thead>
             <tr>
               <th scope="col">No</th>
@@ -89,13 +86,15 @@
           <?php $no = 1;
           foreach ($komuditi as $k) { ?>
           <tbody>
+          
             <tr>
-              <th scope="row"><?php echo $no ?></th>
+              <td scope="row"><?php echo $no ?></td>
               <td><?php echo $k['nama_komuditi'] ?></td>
               <td><?php echo $k['tanggal'] ?></td>
               <td><?php echo $k['harga_lama'] ?></td>
               <td><?php echo $k['harga_baru'] ?></td>
             </tr>
+            
           </tbody>
         <?php $no++;
          }  ?>
