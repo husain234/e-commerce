@@ -148,27 +148,15 @@
 				   <div align="right"> sebelumnya <?php echo "Rp " . number_format($avgc['hargalama'],2,',','.'); ?> | <p  style="color:red">Rp 100,00 | 1,11%</p></div>
                 </a>
             </div>
-            <?php } ?>        
+            <?php } ?> 
+
     </section>
 		
-		
-
-		<nav class="navbar navbar-dark bg-dark">
-     <div class="container-fluid">
-      <a class="navbar-brand">
-        <img src="#" width="80" height="30" alt="">
-      </a>
-      <form class="form-inline" action="#" method="post">
-        <div class="form-group">
-          <input type="text" class="form-control" id="staticEmail2" placeholder="Username" name="username">
-        </div>
-        <div class="form-group mx-sm-3">
-          <input type="password" class="form-control" id="inputPassword2" placeholder="Password" name="password">
-        </div>
-        <button type="submit" class="btn btn-primary" name="btnlogin">Login</button>
-      </form>
-     </div>
-  </nav>
+ <footer class="text-center">
+    <p><a href="http://malangkab.go.id">Kabupaten Malang</a></p>
+  
+    <p>Copyright 2015 bag-pde.malangkab.go.id</a></p>
+  </footer>
   <!-- loader -->
   <div id="ftco-loader" class="show fullscreen"><svg class="circular" width="48px" height="48px"><circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee"/><circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#F96D00"/></svg></div>
 
