@@ -16,19 +16,44 @@
         Membuat Item
         <small>pangan</small>
       </h1>
-      <ol class="breadcrumb">
-        <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
-        <li class="active">Dashboard</li>
-      </ol>
     </section>
 
     <!-- Main content -->
     <section class="content">
       <!-- Info boxes -->
+
+      
       <div class="col-sm-6">
+        <table id="example" class="hover" style="width:100%">
+          <thead>
+            <tr>
+              <th scope="col">No</th>
+              <th scope="col">Id</th>
+              <th scope="col">Komuditi</th>
+              <th scope="col">Tanggal</th>
+              <th scope="col">Ketersediaan</th>
+              <th scope="col">Kebutuhan</th>
+            </tr>
+          </thead>
 
+          
+          <tbody>
+          <?php $no = 1;
+          foreach ($stok as $k) { ?>
+            <tr>
+              <td scope="row"><?php echo $no ?></td>
+              <td><?php echo $k['id_informasi'] ?></td>
+              <td><?php echo $k['id_komuditi'] ?></td>
+              <td><?php echo $k['tanggal'] ?></td>
+              <td><?php echo $k['ketersediaan'] ?></td>
+              <td><?php echo $k['kebutuhan'] ?></td>
+            </tr>
+            <?php $no++;
+         }  ?>
+          </tbody>
+        
+        </table>
       </div>
-
       
       <!-- /.row -->
     </section>
