@@ -11,7 +11,7 @@ class M_pangan extends CI_Model {
 	}
 
 	public function stok() {
-		$query = $this->db->query("SELECT * FROM informasi");
+		$query = $this->db->query("SELECT * FROM informasi a LEFT JOIN komuditi b ON a.id_komuditi = b.id_komuditi");
 		return $query->result_array();
 	}
 

@@ -80,7 +80,7 @@
             <tr>
               <td scope="row"><?php echo $no ?></td>
               <td><?php echo $k['id_informasi'] ?></td>
-              <td><?php echo $k['id_komuditi'] ?></td>
+              <td><?php echo $k['nama_komuditi'] ?></td>
               <td><?php echo $k['tanggal'] ?></td>
               <td><?php echo $k['ketersediaan'] ?></td>
               <td><?php echo $k['kebutuhan'] ?></td>
