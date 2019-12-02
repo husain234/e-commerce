@@ -16,10 +16,6 @@
         Membuat Item
         <small>pangan</small>
       </h1>
-      <ol class="breadcrumb">
-        <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
-        <li class="active">Dashboard</li>
-      </ol>
     </section>
 
     <!-- Main content -->
@@ -27,6 +23,18 @@
       <!-- Info boxes -->
       <div class="col-sm-6">
         <form action="<?php echo base_url().'pangan/stok/inputstok' ?>" method="post">
+        <div class="form-group">
+            <label for="inputAddress">Id Bahan Pokok</label>
+            <input type="text" class="form-control" id="inputAddress" name="idbarang" placeholder="Id Barang">
+          </div>
+          <div class="form-group">
+            <label for="inputAddress">Bahan Pokok</label>
+            <input type="text" class="form-control" id="inputAddress" name="namabarang" placeholder="Nama Bahan Pokok">
+          </div>
+         
+          <button type="submit" class="btn btn-primary">Create</button>
+          
+
           <div class="form-group">
             <label for="inputAddress">Nama</label>
             <select class="form-control" name="idkomuditi" id="id_komuditi" required>

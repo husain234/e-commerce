@@ -36,15 +36,10 @@
           <a href="#">
             <i class="fa fa-files-o"></i>
             <span>Ketahan Pangan</span>
-            <span class="pull-right-container">
-              <span class="label label-primary pull-right">4</span>
-            </span>
+
           </a>
           <ul class="treeview-menu">
             <li><a href="stok"><i class="fa fa-circle-o"></i> Stok Kebutuhan </a></li>
-            <li><a href="pages/layout/boxed.html"><i class="fa fa-circle-o"></i> Boxed</a></li>
-            <li><a href="pages/layout/fixed.html"><i class="fa fa-circle-o"></i> Fixed</a></li>
-            <li><a href="pages/layout/collapsed-sidebar.html"><i class="fa fa-circle-o"></i> Collapsed Sidebar</a></li>
           </ul>
         </li>
         <li class="active menu-open">

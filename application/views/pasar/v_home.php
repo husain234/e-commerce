@@ -15,7 +15,6 @@
     <section class="content-header">
       <h1>
         Dashboard
-        <small>Version 2.0</small>
       </h1>
 
     </section>
@@ -23,8 +22,13 @@
     <!-- Main content -->
     <section class="content">
       <!-- Info boxes -->
-     <div class="col-sm-6">
-        <table id="example" class="hover" style="width:100%">
+        <div class="box">
+            <div class="box-header">
+              <h3 class="box-title"></h3>
+            </div>
+            <!-- /.box-header -->
+            <div class="box-body">
+              <table id="example1" class="table table-bordered table-striped">
           <thead>
             <tr>
               <th scope="col">No</th>
