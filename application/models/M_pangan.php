@@ -21,7 +21,7 @@ class M_pangan extends CI_Model {
 	}
 
 	public function cekstokkomuditi($id) {
-		$query = $this->db->query("SELECT * FROM informasi WHERE id_komuditi='$id'");
+		$query = $this->db->query("SELECT * FROM informasi WHERE id_informasi='$id'");
 
 		if ($query->num_rows()>0) {
 			return 1;
@@ -44,12 +44,12 @@ class M_pangan extends CI_Model {
 	}
 
 	public function informasi($id) {
-		$query = $this->db->query("SELECT * FROM informasi WHERE id_komuditi=$id");
+		$query = $this->db->query("SELECT * FROM informasi WHERE id_bahan=$id");
 		return $query;
 	}
 
 	public function inputstok($idkomuditi, $jumlah, $kebutuhan)	{
-		$query = $this->db->query("INSERT INTO informasi (tanggal, ketersediaan, kebutuhan, id_komuditi) VALUES (NOW(),'$jumlah','$kebutuhan','$idkomuditi')");
+		$query = $this->db->query("INSERT INTO informasi (tanggal, ketersediaan, kebutuhan, id_bahan) VALUES (NOW(),'$jumlah','$kebutuhan','$idkomuditi')");
 	}
 
 	public function inputpokok($idbahan, $namabahan)	{
@@ -57,7 +57,7 @@ class M_pangan extends CI_Model {
 	}
 
 	public function updatestok($idinformasi, $idkomuditi, $jumlah, $kebutuhan) {
-		$query = $this->db->query("UPDATE informasi SET tanggal=CURDATE(), ketersediaan='$jumlah', kebutuhan='$kebutuhan' WHERE id_komuditi='$idkomuditi' AND id_informasi='$idinformasi'");
+		$query = $this->db->query("UPDATE informasi SET tanggal=CURDATE(), ketersediaan='$jumlah', kebutuhan='$kebutuhan' WHERE id_bahan='$idkomuditi' AND id_informasi='$idinformasi'");
 	}
 
 	public function updatepokok($idbahan, $namabahan) {
