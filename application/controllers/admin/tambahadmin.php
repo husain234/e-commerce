@@ -11,17 +11,26 @@ class Tambahadmin extends CI_Controller
 		parent:: __construct();
 		 
 		// load model 
-		$this->load->model('M_User');
+		$this->load->model('M_user');
 	}
 
 	function index()
 	{
-		$this->load->view('admin/v_user.php');
+		$data['pasar'] = $this->M_user->getpasar();
+		$data['level'] = $this->M_user->getlevel();
+		$this->load->view('admin/v_user', $data);
 	}
 
 	function insertadmin()
 	{
-		$this->M_User->insertdata();
+		$nama = $this->input->post('nama_user');
+		$username = $this->input->post('username');
+		$password = $this->input->post('password');
+		$pasar = $this->input->post('pasar');
+		$level = $this->input->post('id_level');
+
+		$this->M_user->insertuser($nama, $username, $password, $level, $pasar);
+
 		redirect('admin/Tambahadmin');
 	}
 

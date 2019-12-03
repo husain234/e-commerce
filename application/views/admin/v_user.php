@@ -23,10 +23,9 @@
     <section class="content">
       <!-- Tempat -->
 
-
       <!-- Tambah Admin -->
       <div class="col-sm-6">
-        <form method="post" action="Tambahadmin/insertadmin/">
+        <form method="post" action="<?php echo base_url().'admin/tambahadmin/insertadmin'; ?>">
           <div class="form-group">
             <label >Nama</label>
             <input type="text" class="form-control" placeholder="Masukkan Nama" name="nama_user" >
@@ -41,17 +40,20 @@
           </div>
           <div class="form-group">
             <label for="inputAddress">Nama Pasar</label>
-            <select class="form-control">
+            <select class="form-control" name="pasar">
               <option value="">No Selected</option>
-              
+              <?php foreach ($pasar as $psr) { ?>
+                <option value="<?php echo $psr['id_pasar']; ?>"><?php echo $psr['nama_pasar']; ?></option>
+              <?php } ?>
             </select>
           </div>
            <div class="form-group">
             <label >Level</label>
             <select  name="id_level">
-                  <option value="1">Admin Kominfo</option>
-                  <option value="2">Admin Perdagangan</option>
-                  <option value="3">Admin Ketahanan Pangan</option>
+                <option value="">No Selected</option>
+              <?php foreach ($level as $lv) { ?>
+                <option value="<?php echo $lv['id_level']; ?>"><?php echo $lv['level']; ?></option>
+              <?php } ?>
             </select>
           </div>
           <button type="submit" class="btn btn-primary">Simpan</button>

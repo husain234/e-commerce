@@ -49,5 +49,19 @@
  		$query = $this->db->query("SELECT * FROM informasi a LEFT JOIN komuditi b ON a.id_komuditi=b.id_komuditi WHERE MONTH(tanggal) = '$bln' AND YEAR(tanggal) = '$thn'");
  		return $query->result_array();
  	}
+
+ 	public function getpasar() {
+ 		$query = $this->db->query("SELECT * FROM pasar");
+ 		return $query->result_array();
+ 	}
+
+ 	public function getlevel() {
+ 		$query = $this->db->query("SELECT * FROM level");
+ 		return $query->result_array();
+ 	}
+
+ 	public function insertuser($nama, $username, $password, $level, $pasar)	{
+ 		$query = $this->db->query("INSERT INTO user (nama_user, username, password, id_level, id_pasar) VALUES ('$nama','$username','$password','$level','$pasar')");
+ 	}
  } 
  ?>

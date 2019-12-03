@@ -42,5 +42,10 @@ class M_pasar extends CI_Model {
 	public function updatehargakomuditi($id, $idh, $lama, $baru, $idpasar) {
 		$query = $this->db->query("UPDATE harga_komuditi SET tanggal=CURDATE(), harga_lama='$lama', harga_baru='$baru', id_komuditi='$id' WHERE id_harga = '$idh' AND id_pasar='$idpasar'");
 	}
+
+	public function getkecamatan() {
+		$query = $this->db->query("SELECT * FROM kecamatan");
+		return $query->result_array();
+	}
 }
 ?>

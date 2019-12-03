@@ -26,12 +26,13 @@
       <div class="col-sm-6">
         <form method="post" action="Tambahadmin/insertadmin/">
           <div class="form-group">
-            <label >ID Kecamatan</label>
-            <input type="text" class="form-control" placeholder="Masukkan Angka">
-          </div>
-          <div class="form-group">
-            <label >Nama Kecamatan</label>
-            <input type="text" class="form-control"  placeholder="Masukkan Kecamatan">
+            <label for="inputAddress">Kecamatan</label>
+            <select class="form-control" name="pasar">
+              <option value="">No Selected</option>
+              <?php foreach ($kecamatan as $psr) { ?>
+                <option value="<?php echo $psr['id_kecamatan']; ?>"><?php echo $psr['nama_kecamatan']; ?></option>
+              <?php } ?>
+            </select>
           </div>
           <div class="form-group">
             <label >ID Pasar</label>
