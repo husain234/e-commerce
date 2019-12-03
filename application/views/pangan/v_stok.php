@@ -59,7 +59,7 @@
             <label for="inputAddress">Kebutuhan</label>
             <input type="text" class="form-control" id="kebutuhan" name="kebutuhan" placeholder="Masukkan Jumlah">
           </div>
-          <button type="submit" class="btn btn-primary">Create</button>
+          <button type="submit" class="btn btn-primary">Update</button>
         </form>
       </div>
 

@@ -21,7 +21,30 @@
 
     <!-- Main content -->
     <section class="content">
-      <!-- Info boxes -->
+      <!-- Tempat -->
+      <div class="col-sm-6">
+        <form method="post" action="Tambahadmin/insertadmin/">
+          <div class="form-group">
+            <label >ID Kecamatan</label>
+            <input type="text" class="form-control" placeholder="Masukkan Angka">
+          </div>
+          <div class="form-group">
+            <label >Nama Kecamatan</label>
+            <input type="text" class="form-control"  placeholder="Masukkan Kecamatan">
+          </div>
+          <div class="form-group">
+            <label >ID Pasar</label>
+            <input type="text" class="form-control" placeholder="Masukkan Angka">
+          </div>
+          <div class="form-group">
+            <label >Nama Pasar</label>
+            <input type="text" class="form-control" placeholder="Masukkan Pasar">
+          </div>
+          <button type="submit" class="btn btn-primary">Simpan</button>
+        </form>
+      </div>
+
+      <!-- Tambah Admin -->
       <div class="col-sm-6">
         <form method="post" action="Tambahadmin/insertadmin/">
           <div class="form-group">
@@ -35,6 +58,13 @@
           <div class="form-group">
             <label >Password</label>
             <input type="Password" class="form-control" placeholder="Masukkan Password" name="password">
+          </div>
+          <div class="form-group">
+            <label for="inputAddress">Nama Pasar</label>
+            <select class="form-control">
+              <option value="">No Selected</option>
+              
+            </select>
           </div>
            <div class="form-group">
             <label >Level</label>
