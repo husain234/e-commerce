@@ -6,8 +6,8 @@
 class M_home extends CI_Model
 {
 	
-	public function tampildata() {
-		$query = $this->db->query("SELECT * FROM user INNER JOIN level ON use.id_level = level.id_level");
+	public function selectuser() {
+		$query = $this->db->query("SELECT * FROM user a LEFT JOIN level b ON a.id_level = b.id_level");
  		return $query->result_array();
 	}
 }

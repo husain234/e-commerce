@@ -35,18 +35,20 @@
                   <th scope="col">No</th>
                   <th scope="col">Nama</th>
                   <th scope="col">Username</th>
+                  <th scope="col">Password</th>
                   <th scope="col">Level</th>
                   <th scope="col">Aksi</th>
                 </tr>
                 </thead>
                 <tbody>
                 <?php $i=1;
-                foreach ($data as $tampil) { ?>
+                foreach ($user as $tampil) { ?>
                 <tr>
                   <td><?php echo $i; ?></td>
-                  <td><?php echo $tampil['nama_user']?></td>
-                  <td><?php echo $tampil->username?></td>
-                  <td><?php echo $tampil->level?></td>
+                  <td><?php echo $tampil['nama_user']; ?></td>
+                  <td><?php echo $tampil['username']; ?></td>
+                  <td><?php echo $tampil['password']; ?></td>
+                  <td><?php echo $tampil['level']; ?></td>
                   <td></td>
                 </tr>
                 <?php $i++;

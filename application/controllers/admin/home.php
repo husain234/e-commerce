@@ -17,7 +17,8 @@ class Home extends CI_Controller
 		 if (empty($user)) {
 		 	redirect('../login');
 		 } else {
-		 	$this->load->view('admin/v_home');
+		 	$data['user'] = $this->M_home->selectuser();
+		 	$this->load->view('admin/v_home',$data);
 		 }
 
 	}
