@@ -6,12 +6,12 @@ class M_pangan extends CI_Model {
 
 	// Update komoditi
 	public function idkomuditi() {
-		$query = $this->db->query("SELECT * FROM komuditi");
+		$query = $this->db->query("SELECT * FROM bahan_pokok");
 		return $query->result_array();
 	}
 
 	public function stok() {
-		$query = $this->db->query("SELECT * FROM informasi a LEFT JOIN komuditi b ON a.id_bahan = b.id_komuditi");
+		$query = $this->db->query("SELECT * FROM informasi a LEFT JOIN bahan_pokok c ON a.id_bahan = c.id_bahan");
 		return $query->result_array();
 	}
 

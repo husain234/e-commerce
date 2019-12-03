@@ -43,7 +43,7 @@
             <select class="form-control" name="idkomuditi" id="id_komuditi" required>
               <option value="">Nama Bahan Pokok</option>
               <?php foreach($id_komuditi as $row):?>
-              <option value="<?php echo $row['id_komuditi'];?>"><?php echo $row['nama_komuditi'];?></option>
+              <option value="<?php echo $row['id_bahan'];?>"><?php echo $row['nama_bahan'];?></option>
               <?php endforeach;?>
             </select>
           </div>
@@ -81,7 +81,7 @@
             <tr>
               <td scope="row"><?php echo $no ?></td>
               <td><?php echo $k['id_informasi'] ?></td>
-              <td><?php echo $k['nama_komuditi'] ?></td>
+              <td><?php echo $k['nama_bahan'] ?></td>
               <td><?php echo $k['tanggal'] ?></td>
               <td><?php echo $k['ketersediaan'] ?></td>
               <td><?php echo $k['kebutuhan'] ?></td>
@@ -93,7 +93,7 @@
 
         <br>
 
-        <table class="table table-bordered" id="example" class="hover" style="width:100%">
+        <!-- <table class="table table-bordered" id="example" class="hover" style="width:100%">
           <thead>
             <tr>
               <th scope="col">No</th>
@@ -114,7 +114,7 @@
           </tbody>
         
         </table>
-      </div>
+      </div> -->
       <!-- /.row -->
     </section>
     <!-- /.content -->
