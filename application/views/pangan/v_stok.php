@@ -22,8 +22,8 @@
     <section class="content">
       <!-- Info boxes -->
       <div class="col-sm-6">
-        <form action="<?php echo base_url().'pangan/stok/inputstok' ?>" method="post">
-        <div class="form-group">
+        <form action="<?php echo base_url().'pangan/stok/inputpokok' ?>" method="post">
+          <div class="form-group">
             <label for="inputAddress">Id Bahan Pokok</label>
             <input type="text" class="form-control" id="inputAddress" name="idbarang" placeholder="Id Barang">
           </div>
@@ -33,8 +33,11 @@
           </div>
          
           <button type="submit" class="btn btn-primary">Create</button>
-          
+        </form>
 
+        <br>
+
+        <form action="<?php echo base_url().'pangan/stok/inputstok' ?>" method="post">    
           <div class="form-group">
             <label for="inputAddress">Nama</label>
             <select class="form-control" name="idkomuditi" id="id_komuditi" required>
@@ -61,7 +64,7 @@
       </div>
 
       <div class="col-sm-6">
-        <table id="example" class="hover" style="width:100%">
+        <table class="table table-bordered" id="example" class="hover" style="width:100%">
           <thead>
             <tr>
               <th scope="col">No</th>
@@ -72,8 +75,6 @@
               <th scope="col">Kebutuhan</th>
             </tr>
           </thead>
-
-          
           <tbody>
           <?php $no = 1;
           foreach ($stok as $k) { ?>
@@ -84,6 +85,29 @@
               <td><?php echo $k['tanggal'] ?></td>
               <td><?php echo $k['ketersediaan'] ?></td>
               <td><?php echo $k['kebutuhan'] ?></td>
+            </tr>
+            <?php $no++;
+         }  ?>
+          </tbody>
+        </table>
+
+        <br>
+
+        <table class="table table-bordered" id="example" class="hover" style="width:100%">
+          <thead>
+            <tr>
+              <th scope="col">No</th>
+              <th scope="col">Id</th>
+              <th scope="col">Bahan Pokok</th>
+            </tr>
+          </thead>
+          <tbody>
+          <?php $no = 1;
+          foreach ($bahanpokok as $bpk) { ?>
+            <tr>
+              <td scope="row"><?php echo $no ?></td>
+              <td><?php echo $bpk['id_bahan'] ?></td>
+              <td><?php echo $bpk['nama_bahan'] ?></td>
             </tr>
             <?php $no++;
          }  ?>

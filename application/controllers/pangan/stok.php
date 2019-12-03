@@ -18,6 +18,7 @@ class stok extends CI_Controller {
 			if ($user == 'Admin Ketahanan Pangan') {
 				$data['id_komuditi'] = $this->M_pangan->idkomuditi();
 				$data['stok'] = $this->M_pangan->stok();
+				$data['bahanpokok'] = $this->M_pangan->bahanpokok();
 				$this->load->view('pangan/v_stok', $data);
 			} else {
 				redirect('../login/logout');
@@ -47,6 +48,23 @@ class stok extends CI_Controller {
 			redirect('pangan/stok');
 		} else {
 			$this->M_pangan->inputstok($idkomuditi, $jumlah, $kebutuhan);
+			redirect('pangan/stok');
+		}
+
+		
+	}
+
+	public function inputpokok()	{
+		$idbahan = $this->input->post('idbarang');
+		$namabahan = $this->input->post('namabarang');
+
+		$cek = $this->M_pangan->cekpokok($idbarang);
+
+		if ($cek == 1) {
+			$this->M_pangan->updatepokok($idbahan, $namabahan);
+			redirect('pangan/stok');
+		} else {
+			$this->M_pangan->inputpokok($idbahan, $namabahan);
 			redirect('pangan/stok');
 		}
 

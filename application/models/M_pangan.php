@@ -11,12 +11,29 @@ class M_pangan extends CI_Model {
 	}
 
 	public function stok() {
-		$query = $this->db->query("SELECT * FROM informasi a LEFT JOIN komuditi b ON a.id_komuditi = b.id_komuditi");
+		$query = $this->db->query("SELECT * FROM informasi a LEFT JOIN komuditi b ON a.id_bahan = b.id_komuditi");
+		return $query->result_array();
+	}
+
+	public function bahanpokok() {
+		$query = $this->db->query("SELECT * FROM bahan_pokok");
 		return $query->result_array();
 	}
 
 	public function cekstokkomuditi($id) {
 		$query = $this->db->query("SELECT * FROM informasi WHERE id_komuditi='$id'");
+
+		if ($query->num_rows()>0) {
+			return 1;
+		} else {
+			return 0;
+		}
+		
+	}
+
+	
+	public function cekpokok($idbarang) {
+		$query = $this->db->query("SELECT * FROM bahan_pokok WHERE id_bahan='$idbarang'");
 
 		if ($query->num_rows()>0) {
 			return 1;
@@ -35,10 +52,17 @@ class M_pangan extends CI_Model {
 		$query = $this->db->query("INSERT INTO informasi (tanggal, ketersediaan, kebutuhan, id_komuditi) VALUES (NOW(),'$jumlah','$kebutuhan','$idkomuditi')");
 	}
 
+	public function inputpokok($idbahan, $namabahan)	{
+		$query = $this->db->query("INSERT INTO bahan_pokok VALUES ('$idbahan','$namabahan')");
+	}
+
 	public function updatestok($idinformasi, $idkomuditi, $jumlah, $kebutuhan) {
 		$query = $this->db->query("UPDATE informasi SET tanggal=CURDATE(), ketersediaan='$jumlah', kebutuhan='$kebutuhan' WHERE id_komuditi='$idkomuditi' AND id_informasi='$idinformasi'");
 	}
-	
-	
+
+	public function updatepokok($idbahan, $namabahan) {
+		$query = $this->db->query("UPDATE bahan_pokok SET nama_bahan=$namabahan WHERE id_bahan='$idbahan' AND id_informasi='$idinformasi'");
+	}
+		
 }
 ?>
