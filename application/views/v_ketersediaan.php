@@ -166,7 +166,7 @@
       <?php 
       $no = 1;
       foreach ($sedia as $s) {
-        $nama = $s['nama_komuditi'];
+        $nama = $s['nama_bahan'];
         $ketersediaan = $s['ketersediaan'];
         $kebutuhan = $s['kebutuhan'];
         $surplus = $s['ketersediaan']-$s['kebutuhan'];

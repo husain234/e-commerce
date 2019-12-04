@@ -41,7 +41,7 @@
  	}
 
  	public function informasi()	{
- 		$query = $this->db->query("SELECT * FROM informasi a LEFT JOIN komuditi b ON a.id_komuditi=b.id_komuditi");
+ 		$query = $this->db->query("SELECT * FROM informasi a LEFT JOIN bahan_pokok b ON a.id_bahan=b.id_bahan");
  		return $query->result_array();
  	}
 
