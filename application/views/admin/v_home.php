@@ -49,7 +49,9 @@
                   <td><?php echo $tampil['username']; ?></td>
                   <td><?php echo $tampil['password']; ?></td>
                   <td><?php echo $tampil['level']; ?></td>
-                  <td></td>
+                  <td><a href="">Edit</a>
+                  <a href="
+                  ">Hapus</a></td>
                 </tr>
                 <?php $i++;
                 } ?>

@@ -188,13 +188,13 @@
               }
           },
           tooltip: {
-              valueSuffix: ' m/s'
+              valueSuffix: ' k '
           },
             credits: {
                  enabled: false
             },
           series: [{
-              name: 'Hestavollane',
+              name: 'Harga',
               data: <?php echo json_encode($harga); ?>
 
           }],
