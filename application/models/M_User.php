@@ -46,7 +46,7 @@
  	}
 
  	public function informasifilter($bln, $thn) {
- 		$query = $this->db->query("SELECT * FROM informasi a LEFT JOIN komuditi b ON a.id_komuditi=b.id_komuditi WHERE MONTH(tanggal) = '$bln' AND YEAR(tanggal) = '$thn'");
+ 		$query = $this->db->query("SELECT * FROM informasi a LEFT JOIN bahan_pokok b ON a.id_bahan=b.id_bahan WHERE MONTH(tanggal) = '$bln' AND YEAR(tanggal) = '$thn'");
  		return $query->result_array();
  	}
 
