@@ -28,5 +28,13 @@ class Home extends CI_Controller
 		$data['data'] = $this->M_home->tampildata();
 		$this->load->view('admin/v_home',$data);
 	}
+
+	function hapusdata($id)
+	{
+		$id = $this->input->post('id_user');
+
+		$this->M_home->hapusdata($id);
+		redirect('admin/home');
+	}
 }
 ?>

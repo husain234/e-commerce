@@ -49,9 +49,8 @@
                   <td><?php echo $tampil['username']; ?></td>
                   <td><?php echo $tampil['password']; ?></td>
                   <td><?php echo $tampil['level']; ?></td>
-                  <td><a href="">Edit</a>
-                  <a href="
-                  ">Hapus</a></td>
+                  <td><button class="btn btn-primary btn-xs" data-toggle="modal" data-target="#demo-default-modal-edit<?php echo $tampil['id_user']?>">Edit</button>
+                  <a href="<?php echo base_url('admin/home/hapusdata/'.$tampil['id_user']) ?>">Hapus</a></td>
                 </tr>
                 <?php $i++;
                 } ?>
@@ -61,7 +60,7 @@
             <!-- /.box-body -->
           </div>
           <!-- /.box -->
-      
+
     </section>
     <!-- /.content -->
   </div>
