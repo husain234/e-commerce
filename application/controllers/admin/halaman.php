@@ -8,6 +8,7 @@ class Halaman extends CI_Controller
 	function __construct(){
         parent::__construct();
         $this->load->model('M_home'); //load model upload model
+         $this->load->model('M_pasar');
         $this->load->library('upload'); //load library upload 
     }
 
@@ -16,7 +17,8 @@ class Halaman extends CI_Controller
 		if (empty($user)) {
 			redirect('../login');
 		} else {
-			$this->load->view('admin/v_halaman');
+            $data['id_komuditi'] = $this->M_pasar->idkomuditi();
+			$this->load->view('admin/v_halaman',$data);
 		}
 	}
 
@@ -99,5 +101,12 @@ class Halaman extends CI_Controller
         }
 		
 	}
+
+    public function datakomuditi() {
+        $id = $this->input->post('id',TRUE);
+
+        $nama = $this->M_home->komuditi($id)->result_array();
+        echo json_encode($nama);
+    }
 }
 ?>

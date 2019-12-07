@@ -59,11 +59,16 @@
           </div>
           <div class="form-group">
             <label for="inputAddress">Id barang</label>
-            <input name="id" type="text" class="form-control" id="inputAddress" placeholder="Masukkan Id Barang">
+            <select class="form-control" name="id" id="id_komuditi" required>
+              <option value="">No Selected</option>
+              <?php foreach($id_komuditi as $row):?>
+              <option value="<?php echo $row['id_komuditi'];?>"><?php echo $row['id_komuditi'];?></option>
+              <?php endforeach;?>
+            </select>
           </div>
           <div class="form-group">
             <label for="inputAddress">Nama barang</label>
-            <input name="barang" type="text" class="form-control" id="inputAddress" placeholder="Masukkan Nama Barang">
+            <input name="barang" type="text" class="form-control" id="nama_komuditi" placeholder="Masukkan Nama Barang">
           </div>
           <button type="submit" class="btn btn-primary">Create</button>
         </form>
@@ -97,5 +102,35 @@
     };
   };
 </script>
+
+<script type="text/javascript">
+        $(document).ready(function(){
+ 
+            $('#id_komuditi').change(function(){ 
+                var id=$(this).val();
+
+                $.ajax({
+                    url : "<?php echo site_url('admin/halaman/datakomuditi');?>",
+                    method : "POST",
+                    data : {id: id},
+                    async : true,
+                    dataType : 'json',
+                    success: function(data){
+                         
+                        var nama = '';
+                        var i;
+                        for(i=0; i<data.length; i++){
+                            nama += data[i].nama_komuditi;
+                        }
+
+                        document.getElementById("nama_komuditi").value = nama;
+ 
+                    }
+                });
+                return false;
+            }); 
+             
+        });
+    </script>
 </body>
 </html>

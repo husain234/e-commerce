@@ -49,4 +49,9 @@ class M_home extends CI_Model
 		$result = $this->db->query("UPDATE komuditi SET nama_komuditi = '$nama', img = '$image' WHERE id_komuditi = '$id'");
         return $result;
 	}
+
+	public function komuditi($id) {
+		$query = $this->db->query("SELECT * FROM komuditi WHERE id_komuditi = '$id'");
+		return $query;
+	}
 }
