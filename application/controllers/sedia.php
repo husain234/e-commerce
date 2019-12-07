@@ -11,6 +11,7 @@ class sedia extends CI_Controller {
 	}
 
 	function index() {
+		$data['banner'] = $this->M_user->imgbanner();
 		$submit = $this->input->post('submit');
 		$thn = $this->input->post('thn');
 		$bln = $this->input->post('bln');

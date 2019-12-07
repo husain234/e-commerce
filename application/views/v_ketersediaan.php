@@ -51,50 +51,25 @@
       </nav>
     <!-- END nav -->
 
-    <section id="home-section" class="hero">
-          <div class="home-slider owl-carousel">
-          <div class="slider-item" style="background-image: url(assets/images/img/daging.jpg);">
+     <section id="home-section" class="hero">
+    <div class="home-slider owl-carousel">
+      <?php foreach ($banner as $bn) { ?>
+          <div class="slider-item" style="background-image: url(assets/imgbanner/<?php echo $bn['img']; ?>);">
             <div class="overlay"></div>
             <div class="container">
               <div class="row slider-text justify-content-center align-items-center" data-scrollax-parent="true">
 
                 <div class="col-md-12 ftco-animate text-center">
-                  <h1 class="mb-2">Selamat datang di Pasar Onlin Kabupaten Malang</h1>
-                  <h2 class="subheading mb-4">We deliver organic vegetables &amp; fruits</h2>
+                  <h1 class="mb-2"><?php echo $bn['judul']; ?></h1>
+                  <!-- <h2 class="subheading mb-4">We deliver organic vegetables &amp; fruits</h2> -->
                 </div>
 
               </div>
             </div>
           </div>
-
-          <div class="slider-item" style="background-image: url(assets/images/img/sayuran.jpg);">
-            <div class="overlay"></div>
-            <div class="container">
-              <div class="row slider-text justify-content-center align-items-center" data-scrollax-parent="true">
-
-                <div class="col-sm-12 ftco-animate text-center">
-                  <h1 class="mb-2">Menyediakan kebutuhan pokok anda</h1>
-                  <h2 class="subheading mb-4">We deliver organic vegetables &amp; fruits</h2>
-                </div>
-
-              </div>
-            </div>
-          </div>
-
-          <div class="slider-item" style="background-image: url(assets/images/img/susu.jpg);">
-            <div class="overlay"></div>
-            <div class="container">
-              <div class="row slider-text justify-content-center align-items-center" data-scrollax-parent="true">
-
-                <div class="col-md-12 ftco-animate text-center">
-                  <h1 class="mb-2">Dengan 100% bahan alami pilihan &amp; segar</h1>
-                  <h2 class="subheading mb-4">We deliver organic vegetables &amp; fruits</h2>
-                </div>
-
-              </div>
-            </div>
-          </div>
-        </div>
+        <?php } ?>
+      </div>
+    </section>
 
 
 

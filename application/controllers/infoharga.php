@@ -11,6 +11,7 @@ class infoharga extends CI_Controller {
 	}
 
 	function index() {
+		$data['banner'] = $this->M_user->imgbanner();
 		$kecamatan = $this->input->post('IdKecamatan');
 		if (!empty($kecamatan)) {
 			$data['komuditiharga'] = $this->M_user->infohargas($kecamatan);
