@@ -11,6 +11,7 @@ class grafikharga extends CI_Controller {
 	}
 
 	function index() {
+		$data['banner'] = $this->M_user->imgbanner();
 		$kecamatan = $this->input->post('IdKecamatan');
 		$komuditi = $this->input->post('IdKomuditi');
 		$tahun = $this->input->post('tahun');
