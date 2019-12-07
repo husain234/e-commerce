@@ -29,12 +29,18 @@ class Home extends CI_Controller
 		$this->load->view('admin/v_home',$data);
 	}
 
-	function hapusdata($id)
-	{
-		$id = $this->input->post('id_user');
+	function hapusdata() {
+		$id = $this->uri->segment(4);
 
 		$this->M_home->hapusdata($id);
 		redirect('admin/home');
+	}
+
+	function editdata()	{
+		$id = $this->uri->segment(4);
+
+		// $this->M_home->editdata($id);
+		// redirect('admin/home');
 	}
 }
 ?>

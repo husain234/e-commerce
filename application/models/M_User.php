@@ -6,7 +6,7 @@
  class M_user extends CI_Model {
  	
  	public function avgkomuditi() {
- 		$query = $this->db->query("SELECT nama_komuditi, avg(harga_baru) as hargabaru, avg(harga_lama) as hargalama FROM harga_komuditi a LEFT JOIN komuditi b ON a.id_komuditi = b.id_komuditi GROUP BY a.id_komuditi");
+ 		$query = $this->db->query("SELECT nama_komuditi, avg(harga_baru) as hargabaru, avg(harga_lama) as hargalama, img FROM harga_komuditi a LEFT JOIN komuditi b ON a.id_komuditi = b.id_komuditi GROUP BY a.id_komuditi");
  		return $query->result_array();
  	}
 
@@ -62,6 +62,11 @@
 
  	public function insertuser($nama, $username, $password, $level, $pasar)	{
  		$query = $this->db->query("INSERT INTO user (nama_user, username, password, id_level, id_pasar) VALUES ('$nama','$username','$password','$level','$pasar')");
+ 	}
+
+ 	public function imgbanner()	{
+ 		$query = $this->db->query("SELECT * FROM banner");
+ 		return $query->result_array();
  	}
  } 
  ?>
