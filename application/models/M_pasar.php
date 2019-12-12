@@ -4,8 +4,8 @@
  */
 class M_pasar extends CI_Model {
 	
-	public function tambahkomoditi($idbarang,$namabarang) {
-		$query = $this->db->query("INSERT INTO komuditi VALUES ('$idbarang','$namabarang')");
+	public function tambahkomoditi($namabarang) {
+		$query = $this->db->query("INSERT INTO komuditi (nama_komuditi) VALUES ('$namabarang')");
 	}
 
 	// Update komoditi

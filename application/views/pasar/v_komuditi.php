@@ -26,10 +26,6 @@
        <div class="col-sm-6">
         <form action="<?php echo base_url().'pasar/komuditi/tambahkomuditi' ?>" method="post">
           <div class="form-group">
-            <label for="inputAddress">Id Barang</label>
-            <input type="text" class="form-control" id="inputAddress" name="idbarang" placeholder="Id Barang">
-          </div>
-          <div class="form-group">
             <label for="inputAddress">Barang</label>
             <input type="text" class="form-control" id="inputAddress" name="namabarang" placeholder="Nama Barang">
           </div>

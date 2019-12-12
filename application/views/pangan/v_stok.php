@@ -24,10 +24,6 @@
       <div class="col-sm-6">
         <form action="<?php echo base_url().'pangan/stok/inputpokok' ?>" method="post">
           <div class="form-group">
-            <label for="inputAddress">Id Bahan Pokok</label>
-            <input type="text" class="form-control" id="inputAddress" name="idbarang" placeholder="Id Barang">
-          </div>
-          <div class="form-group">
             <label for="inputAddress">Bahan Pokok</label>
             <input type="text" class="form-control" id="inputAddress" name="namabarang" placeholder="Nama Bahan Pokok">
           </div>

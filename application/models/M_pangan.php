@@ -32,15 +32,8 @@ class M_pangan extends CI_Model {
 	}
 
 	
-	public function cekpokok($idbarang) {
-		$query = $this->db->query("SELECT * FROM bahan_pokok WHERE id_bahan='$idbarang'");
-
-		if ($query->num_rows()>0) {
-			return 1;
-		} else {
-			return 0;
-		}
-		
+	public function cekpokok($namabahan) {
+		return $this->db->query("SELECT * FROM bahan_pokok WHERE nama_bahan='$namabahan'");		
 	}
 
 	public function informasi($id) {
@@ -52,8 +45,8 @@ class M_pangan extends CI_Model {
 		$query = $this->db->query("INSERT INTO informasi (tanggal, ketersediaan, kebutuhan, id_bahan) VALUES (NOW(),'$jumlah','$kebutuhan','$idkomuditi')");
 	}
 
-	public function inputpokok($idbahan, $namabahan)	{
-		$query = $this->db->query("INSERT INTO bahan_pokok VALUES ('$idbahan','$namabahan')");
+	public function inputpokok($namabahan)	{
+		$query = $this->db->query("INSERT INTO bahan_pokok (nama_bahan) VALUES ('$namabahan')");
 	}
 
 	public function updatestok($idinformasi, $idkomuditi, $jumlah, $kebutuhan) {
@@ -61,7 +54,7 @@ class M_pangan extends CI_Model {
 	}
 
 	public function updatepokok($idbahan, $namabahan) {
-		$query = $this->db->query("UPDATE bahan_pokok SET nama_bahan=$namabahan WHERE id_bahan='$idbahan' AND id_informasi='$idinformasi'");
+		$query = $this->db->query("UPDATE bahan_pokok SET nama_bahan='$namabahan' WHERE id_bahan='$idbahan'");
 	}
 		
 }

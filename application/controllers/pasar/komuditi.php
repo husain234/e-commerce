@@ -27,10 +27,9 @@ class komuditi extends CI_Controller {
 	}
 
 	public function tambahkomuditi() {
-		$idbarang = $this->input->post('idbarang');
 		$namabarang = $this->input->post('namabarang');
 
-		$this->M_pasar->tambahkomoditi($idbarang,$namabarang);
+		$this->M_pasar->tambahkomoditi($namabarang);
 		redirect('pasar/komuditi');
 	}
 }

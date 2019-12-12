@@ -54,17 +54,16 @@ class stok extends CI_Controller {
 		
 	}
 
-	public function inputpokok()	{
-		$idbahan = $this->input->post('idbarang');
+	public function inputpokok() {
 		$namabahan = $this->input->post('namabarang');
 
-		$cek = $this->M_pangan->cekpokok($idbarang);
+		$cek = $this->M_pangan->cekpokok($namabahan)->row();
 
-		if ($cek == 1) {
-			$this->M_pangan->updatepokok($idbahan, $namabahan);
+		if (!empty($cek)) {
+			$this->M_pangan->updatepokok($cek->id_bahan, $namabahan);
 			redirect('pangan/stok');
 		} else {
-			$this->M_pangan->inputpokok($idbahan, $namabahan);
+			$this->M_pangan->inputpokok($namabahan);
 			redirect('pangan/stok');
 		}
 
